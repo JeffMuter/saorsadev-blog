@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/test-post/</link>
       <pubDate>Thu, 09 May 2024 23:00:55 -0400</pubDate>
       <guid>http://localhost:1313/posts/test-post/</guid>
-      <description>#Some Page</description>
+      <description>Some Page </description>
     </item>
   </channel>
 </rss>
