@@ -8,7 +8,7 @@
     ],
     "rewrites": [
       {
-        "source": "/blog**",
+        "source": "/blog/**",
         "destination": "/blog/index.html"
       }
     ]
