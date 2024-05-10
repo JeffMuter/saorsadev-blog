@@ -1,4 +1,4 @@
-baseURL = 'https://www.jeffmuter.com/blog/'
+baseURL = 'https://www.jeffmuter.com/blog'
 languageCode = 'en-us'
 title = 'Muter Blog'
 theme = 'ananke'
