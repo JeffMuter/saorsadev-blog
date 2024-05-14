@@ -1,4 +1,4 @@
-baseURL = 'https://www.jeffmuter.com/blog'
+baseURL = 'https://www.saorsadev.com'
 languageCode = 'en-us'
-title = 'Muter Blog'
+title = 'SaorsaDev Blog'
 theme = 'ananke'
