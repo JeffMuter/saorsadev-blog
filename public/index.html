@@ -1,167 +1,89 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Muter Blog</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.125.7">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-    
-<link rel="stylesheet" href="/blog/ananke/css/main.min.css" >
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.12.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/10.12.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.12.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.12.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.12.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.12.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.12.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.12.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.12.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.12.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-
-
-    
-
-    
-      
-
-    
-
-    
-    
-      <link href="/blog/index.xml" rel="alternate" type="application/rss+xml" title="Muter Blog" />
-      <link href="/blog/index.xml" rel="feed" type="application/rss+xml" title="Muter Blog" />
-      
-    
-
-    
-      <link rel="canonical" href="https://www.jeffmuter.com/blog/">
-    
-
-    <meta property="og:url" content="https://www.jeffmuter.com/blog/">
-  <meta property="og:site_name" content="Muter Blog">
-  <meta property="og:title" content="Muter Blog">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
-
-  <meta itemprop="name" content="Muter Blog">
-  <meta itemprop="dateModified" content="2024-05-09T23:00:55-04:00"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Muter Blog">
-<meta name="twitter:description" content="">
-
-	
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
   </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-
-  <header>
-    <div class="pb3-m pb6-l bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Muter Blog
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
-  
-</div>
-
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
-  </div>
-</nav>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Muter Blog
-        </h1>
-        
-      </div>
-    </div>
-  </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-
-    <main class="pb7" role="main">
-      
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-      
-    </article>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      <div class="pa3 pa4-ns w-100 w-70-ns center">
-        
-        
-            <h1 class="flex-none">
-              Recent Posts
-            </h1>
-          
-
-        
-
-        <section class="w-100 mw8">
-          
-          
-            <div class="relative w-100 mb4">
-              
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/blog/posts/test-post/" class="color-inherit dim link">
-            Test Post
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Some Page 
-        </div>
-          <a href="/blog/posts/test-post/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-            </div>
-          
-        </section>
-
-        
-
-        </div>
-    
-  
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://www.jeffmuter.com/blog/" >
-    &copy;  Muter Blog 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
-  
-</div>
-</div>
-  </div>
-</footer>
-
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
   </body>
 </html>
