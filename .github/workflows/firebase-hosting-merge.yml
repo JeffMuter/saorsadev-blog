@@ -38,4 +38,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SAORSADEV }}
           channelId: live
           projectId: saorsadev
-          entryPoint: public  # Specify the directory if it's different from 'public'
+          entryPoint: .  # Specify the directory if it's different from 'public'
