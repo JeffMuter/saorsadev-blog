@@ -1,4 +1,4 @@
-baseURL = 'https://www.saorsadev.com'
+baseURL = 'https://.saorsadev.com'
 languageCode = 'en-us'
-title = 'SaorsaDev Blog'
+title = 'SaorsaDev'
 theme = 'ananke'
