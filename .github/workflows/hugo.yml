@@ -3,7 +3,7 @@ name: Build Hugo Site
 on:
   push:
     branches:
-      - main  # or the branch you want to trigger the action
+      - master  # or the branch you want to trigger the action
 
 jobs:
   build:
