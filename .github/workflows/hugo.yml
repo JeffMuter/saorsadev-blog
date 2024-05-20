@@ -21,11 +21,18 @@ jobs:
     - name: Build the site
       run: hugo
 
+    - name: Verify Hugo build
+      run: |
+        if [ ! -d "public" ]; then
+          echo "Hugo build failed: 'public' directory not found"
+          exit 1
+        fi
+
     - name: List directory contents
       run: ls -la
 
     - name: Upload public directory
-      uses: actions/upload-artifact@v3  # Update to the latest version
+      uses: actions/upload-artifact@v4  # Update to the latest version
       with:
         name: public
         path: public
