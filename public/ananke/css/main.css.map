@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/jefferymuter/repos/go/quickstart",
+	"sourceRoot": "/home/SaorsaDev/repos/go/quickstart",
 	"sources": [
 		"ananke/css/main.css"
 	],
