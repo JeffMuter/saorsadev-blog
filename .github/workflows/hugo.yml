@@ -19,7 +19,7 @@ jobs:
         hugo-version: 'latest'
 
     - name: Build the site
-      run: hugo
+      run: hugo -D
 
     - name: Upload public directory
       uses: actions/upload-artifact@v2
