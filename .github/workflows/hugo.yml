@@ -22,7 +22,7 @@ jobs:
       run: hugo -D
 
     - name: Upload public directory
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: public
         path: public
