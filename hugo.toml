@@ -2,3 +2,19 @@ baseURL = 'https://.saorsadev.com'
 languageCode = 'en-us'
 title = 'SaorsaDev'
 theme = 'ananke'
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+  page = ["HTML"]
+  taxonomy = ["HTML"]
+  taxonomyTerm = ["HTML"]
+
+[mediaTypes]
+  [mediaTypes."text/html"]
+    suffixes = ["html"]
+
+[outputFormats]
+  [outputFormats.HTML]
+    mediaType = "text/html"
+    baseName = "index"
