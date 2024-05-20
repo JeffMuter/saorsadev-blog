@@ -3,7 +3,7 @@ iname: Build Hugo Site
 on:
   push:
     branches:
-      - main  # Adjust to your default branch if different
+      - master  # Adjust to your default branch if different
 
 jobs:
   build:
@@ -34,7 +34,7 @@ name: Build Hugo Site
 on:
   push:
     branches:
-      - main  # Adjust to your default branch if different
+      - master  # Adjust to your default branch if different
 
 jobs:
   build:
