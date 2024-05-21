@@ -1,0 +1,38 @@
+name: Build Hugo Site
+
+on:
+  push:
+    branches:
+      - master  # Adjust to your default branch if different
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Update to the latest version
+
+    - name: Set up Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+
+    - name: Build the site
+      run: hugo
+
+    - name: Verify Hugo build
+      run: |
+        if [ ! -d "public" ]; then
+          echo "Hugo build failed: 'public' directory not found"
+          exit 1
+        fi
+
+    - name: List directory contents
+      run: ls -la
+
+    - name: Upload public directory
+      uses: actions/upload-artifact@v4  # Update to the latest version
+      with:
+        name: public
+        path: public
