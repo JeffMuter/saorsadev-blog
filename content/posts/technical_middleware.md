@@ -1,13 +1,15 @@
 
 +++
 title = 'Simplifying Middleware in Go'
-date = 2024-05-28T23:00:00-00:00
+date = 2024-05-28
 draft = false
 +++
 
 I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.
 
-`mux.HandleFunc("/", handlers.ServeHomePage)`
+`
+    mux.HandleFunc("/", handlers.ServeHomePage)
+`
 
 This line of code is typically found in a 'routes' package, and HandleFunc takes two arguments:
 1. A string definining the endpoint
