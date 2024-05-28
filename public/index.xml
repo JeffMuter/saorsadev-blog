@@ -13,7 +13,7 @@
       <link>https://.saorsadev.com/posts/technical_middleware/</link>
       <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
       <guid>https://.saorsadev.com/posts/technical_middleware/</guid>
-      <description>I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.</description>
+      <description>Simplifying Middleware in Go Cheat Sheet Handler type interface type Handler interface { ServeHTTP(ResponseWriter, *Request) }&#xA;Handle() function func Handle(pattern string, handler Handler)&#xA;HandleFunc() function func HandleFunc(pattern string, handler func(ResponseWriter, *Request))&#xA;HandlerFunc type type HandlerFunc func(ResponseWriter, *Request)&#xA;ServeHTTP method func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)&#xA;I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application.</description>
     </item>
     <item>
       <title>Weekly Dev Update 2</title>
