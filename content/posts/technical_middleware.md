@@ -5,11 +5,38 @@ date = 2024-05-28
 draft = false
 +++
 
+# Simplifying Middleware in Go
+
+## Cheat Sheet
+
+* Handler type interface
+
+type Handler interface {
+	ServeHTTP(ResponseWriter, *Request)
+}
+
+* Handle() function
+
+func Handle(pattern string, handler Handler)
+
+* HandleFunc() function
+
+func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+
+* HandlerFunc type
+
+type HandlerFunc func(ResponseWriter, *Request)
+
+* ServeHTTP method
+
+func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)
+
+
 I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.
 
-`
+```
     mux.HandleFunc("/", handlers.ServeHomePage)
-`
+```
 
 This line of code is typically found in a 'routes' package, and HandleFunc takes two arguments:
 1. A string definining the endpoint
@@ -33,15 +60,15 @@ I think Golang is a fantastic language, it gives you some tools that are very fl
 
 let's define a type...
 
-`
+```
     type ourNums struct {
         wholeNum   int
         decimalNum float32
     }
-`
+```
 This doesn't look too confusing. We have a type called 'ourNums' which has 2 fields. Now, generally, I am not a fan of multiple ways of writing the same code. We'll call the first method 'alias type' and the second 'struct type'.
 
-`
+```
     types ourNum int
 
     var newNum ourNum = 1
@@ -51,26 +78,28 @@ This doesn't look too confusing. We have a type called 'ourNums' which has 2 fie
     }
     var makeBool ourBool{isTrue: true}
 
-`
+```
 Not too bad! The second method is the same way you would create and declare types with multiple fields. The alias type instanciation has a very slight benefit on performance, if you are shooting for high performance, this is once of those times where you would want to use alias type. However, readability is important. However, I think while the alias type is not as intuitive as the struct type, either in instantiation or declaration, once you understand the concept, it is no more difficult to understand that the various ways to declare variables.
 
 Let us now take a look at the http.HandlerFunc type:
 
-`
+```
     type HandlerFunc func(ResponseWriter, *Request)
-`
+```
 
 When unfamiliar with what a handler is, how types are made, I think this becomes horribly confusing to look at. The first thing we want to do, is understand what HandlerFunc is trying to accomplish... We have a need to create a function who's job is to perform an action before the handler is called, to keep this simple, let's isolate this to just our use case. We may have dozens, or hundreds of routes. We need to authenticate some, or all of them. While we could rewrite authentication code inside each of these, that will add a lot of extra, unncecesary code. So we encapsulate this logic in a 'middleware' package. The middleware to authenticats's job is to authenticate the user, and if they pass, we excecute the corresponding handler, if if fails, we must write a response, and handle what to send back seperately.
 
 So, looking back at HandlerFunc. We have a type that has a single field, which is a function which looks a lot like our Handler type from earlier. Why have all the lengthy syntax of declaring http.HandlerFunc to have a parameter of a function, if that function is a Handler type? Why not say:
 
-` type HandlerFunc Handler `
+```
+type HandlerFunc Handler 
+```
 
 This is because, not all Handler types are functions! While I mentioned breifly earlier, since this is not guarunteed, to drastically simplify our code, http.HandlerFunc() has explicitly declared that it only deals with functions! http.HandlerFunc() type even comes with its own http.Server.HTTP() method, so that HandlerFunc() is a Handler() interface type as well!
 
 So let's look at a practical example of HandlerFunc in action!
 
-`
+```
 func Router() *http.ServeMux {
 	mux := http.NewServeMux()
 
@@ -91,7 +120,7 @@ func AuthMiddleware(handler http.HandlerFunc) http.Handler {
         // if the user is validated, send them to the handler we would like to!
     }
 }
-`
+```
 
 This code above has a few steps that aren't important, so we will use commented pseudocode!
 
