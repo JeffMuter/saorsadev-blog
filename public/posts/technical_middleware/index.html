@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
     <title>Simplifying Middleware in Go | SaorsaDev</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.">
+    <meta name="description" content="Simplifying Middleware in Go Cheat Sheet Handler type interface type Handler interface { ServeHTTP(ResponseWriter, *Request) }
+Handle() function func Handle(pattern string, handler Handler)
+HandleFunc() function func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+HandlerFunc type type HandlerFunc func(ResponseWriter, *Request)
+ServeHTTP method func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)
+I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application.">
     <meta name="generator" content="Hugo 0.126.1">
     
     
@@ -31,13 +36,18 @@
     
 
     
-      <link rel="canonical" href="https://.saorsadev.com/posts/technical_middleware/">
+      <link rel="canonical" href="http://localhost:1313/posts/technical_middleware/">
     
 
-    <meta property="og:url" content="https://.saorsadev.com/posts/technical_middleware/">
+    <meta property="og:url" content="http://localhost:1313/posts/technical_middleware/">
   <meta property="og:site_name" content="SaorsaDev">
   <meta property="og:title" content="Simplifying Middleware in Go">
-  <meta property="og:description" content="I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.">
+  <meta property="og:description" content="Simplifying Middleware in Go Cheat Sheet Handler type interface type Handler interface { ServeHTTP(ResponseWriter, *Request) }
+Handle() function func Handle(pattern string, handler Handler)
+HandleFunc() function func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+HandlerFunc type type HandlerFunc func(ResponseWriter, *Request)
+ServeHTTP method func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)
+I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -45,13 +55,23 @@
     <meta property="article:modified_time" content="2024-05-28T00:00:00+00:00">
 
   <meta itemprop="name" content="Simplifying Middleware in Go">
-  <meta itemprop="description" content="I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.">
+  <meta itemprop="description" content="Simplifying Middleware in Go Cheat Sheet Handler type interface type Handler interface { ServeHTTP(ResponseWriter, *Request) }
+Handle() function func Handle(pattern string, handler Handler)
+HandleFunc() function func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+HandlerFunc type type HandlerFunc func(ResponseWriter, *Request)
+ServeHTTP method func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)
+I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application.">
   <meta itemprop="datePublished" content="2024-05-28T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-28T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1166">
+  <meta itemprop="wordCount" content="1208">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Simplifying Middleware in Go">
-  <meta name="twitter:description" content="I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.">
+  <meta name="twitter:description" content="Simplifying Middleware in Go Cheat Sheet Handler type interface type Handler interface { ServeHTTP(ResponseWriter, *Request) }
+Handle() function func Handle(pattern string, handler Handler)
+HandleFunc() function func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+HandlerFunc type type HandlerFunc func(ResponseWriter, *Request)
+ServeHTTP method func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)
+I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application.">
 
 	
   </head>
@@ -124,9 +144,33 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.</p>
-<p><code>mux.HandleFunc(&quot;/&quot;, handlers.ServeHomePage)</code></p>
-<p>This line of code is typically found in a &lsquo;routes&rsquo; package, and HandleFunc takes two arguments:</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="simplifying-middleware-in-go">Simplifying Middleware in Go</h1>
+<h2 id="cheat-sheet">Cheat Sheet</h2>
+<ul>
+<li>Handler type interface</li>
+</ul>
+<p>type Handler interface {
+ServeHTTP(ResponseWriter, *Request)
+}</p>
+<ul>
+<li>Handle() function</li>
+</ul>
+<p>func Handle(pattern string, handler Handler)</p>
+<ul>
+<li>HandleFunc() function</li>
+</ul>
+<p>func HandleFunc(pattern string, handler func(ResponseWriter, *Request))</p>
+<ul>
+<li>HandlerFunc type</li>
+</ul>
+<p>type HandlerFunc func(ResponseWriter, *Request)</p>
+<ul>
+<li>ServeHTTP method</li>
+</ul>
+<p>func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)</p>
+<p>I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.</p>
+<pre tabindex="0"><code>    mux.HandleFunc(&#34;/&#34;, handlers.ServeHomePage)
+</code></pre><p>This line of code is typically found in a &lsquo;routes&rsquo; package, and HandleFunc takes two arguments:</p>
 <ol>
 <li>A string definining the endpoint</li>
 <li>A &lsquo;Handler&rsquo; is a function that takes in a user&rsquo;s request data, and allows us to craft a response.</li>
@@ -143,47 +187,48 @@
 <p>Now that we have learned the high level basics of creating a handler, and what http.HandleFunc() does, let&rsquo;s dive into the meat of what most people find confusing when authenticating routes. Middleware, and http.HandlerFunc().</p>
 <p>I think Golang is a fantastic language, it gives you some tools that are very flexible, which allow the language to accomplish some amazing tasks, if you use them wisely. Creating custom types can visually be a little confusing, and then the syntax for a custom type that has a single field that is a function, which has its own parameters, can feel very jarring. I think while building a web server, if this is the first time approaching both of these concepts in the syntax, it can lead to a lot of mental friction. It certainly did for me!</p>
 <p>let&rsquo;s define a type&hellip;</p>
-<p><code>type ourNums struct { wholeNum   int decimalNum float32 }</code>
-This doesn&rsquo;t look too confusing. We have a type called &lsquo;ourNums&rsquo; which has 2 fields. Now, generally, I am not a fan of multiple ways of writing the same code. We&rsquo;ll call the first method &lsquo;alias type&rsquo; and the second &lsquo;struct type&rsquo;.</p>
-<p>`
-types ourNum int</p>
-<pre><code>var newNum ourNum = 1
+<pre tabindex="0"><code>    type ourNums struct {
+        wholeNum   int
+        decimalNum float32
+    }
+</code></pre><p>This doesn&rsquo;t look too confusing. We have a type called &lsquo;ourNums&rsquo; which has 2 fields. Now, generally, I am not a fan of multiple ways of writing the same code. We&rsquo;ll call the first method &lsquo;alias type&rsquo; and the second &lsquo;struct type&rsquo;.</p>
+<pre tabindex="0"><code>    types ourNum int
 
-type ourBool struct {
-    isTrue bool
-}
-var makeBool ourBool{isTrue: true}
-</code></pre>
-<p>`
-Not too bad! The second method is the same way you would create and declare types with multiple fields. The alias type instanciation has a very slight benefit on performance, if you are shooting for high performance, this is once of those times where you would want to use alias type. However, readability is important. However, I think while the alias type is not as intuitive as the struct type, either in instantiation or declaration, once you understand the concept, it is no more difficult to understand that the various ways to declare variables.</p>
+    var newNum ourNum = 1
+
+    type ourBool struct {
+        isTrue bool
+    }
+    var makeBool ourBool{isTrue: true}
+</code></pre><p>Not too bad! The second method is the same way you would create and declare types with multiple fields. The alias type instanciation has a very slight benefit on performance, if you are shooting for high performance, this is once of those times where you would want to use alias type. However, readability is important. However, I think while the alias type is not as intuitive as the struct type, either in instantiation or declaration, once you understand the concept, it is no more difficult to understand that the various ways to declare variables.</p>
 <p>Let us now take a look at the http.HandlerFunc type:</p>
-<p><code>type HandlerFunc func(ResponseWriter, *Request)</code></p>
-<p>When unfamiliar with what a handler is, how types are made, I think this becomes horribly confusing to look at. The first thing we want to do, is understand what HandlerFunc is trying to accomplish&hellip; We have a need to create a function who&rsquo;s job is to perform an action before the handler is called, to keep this simple, let&rsquo;s isolate this to just our use case. We may have dozens, or hundreds of routes. We need to authenticate some, or all of them. While we could rewrite authentication code inside each of these, that will add a lot of extra, unncecesary code. So we encapsulate this logic in a &lsquo;middleware&rsquo; package. The middleware to authenticats&rsquo;s job is to authenticate the user, and if they pass, we excecute the corresponding handler, if if fails, we must write a response, and handle what to send back seperately.</p>
+<pre tabindex="0"><code>    type HandlerFunc func(ResponseWriter, *Request)
+</code></pre><p>When unfamiliar with what a handler is, how types are made, I think this becomes horribly confusing to look at. The first thing we want to do, is understand what HandlerFunc is trying to accomplish&hellip; We have a need to create a function who&rsquo;s job is to perform an action before the handler is called, to keep this simple, let&rsquo;s isolate this to just our use case. We may have dozens, or hundreds of routes. We need to authenticate some, or all of them. While we could rewrite authentication code inside each of these, that will add a lot of extra, unncecesary code. So we encapsulate this logic in a &lsquo;middleware&rsquo; package. The middleware to authenticats&rsquo;s job is to authenticate the user, and if they pass, we excecute the corresponding handler, if if fails, we must write a response, and handle what to send back seperately.</p>
 <p>So, looking back at HandlerFunc. We have a type that has a single field, which is a function which looks a lot like our Handler type from earlier. Why have all the lengthy syntax of declaring http.HandlerFunc to have a parameter of a function, if that function is a Handler type? Why not say:</p>
-<p><code>type HandlerFunc Handler</code></p>
-<p>This is because, not all Handler types are functions! While I mentioned breifly earlier, since this is not guarunteed, to drastically simplify our code, http.HandlerFunc() has explicitly declared that it only deals with functions! http.HandlerFunc() type even comes with its own http.Server.HTTP() method, so that HandlerFunc() is a Handler() interface type as well!</p>
+<pre tabindex="0"><code>type HandlerFunc Handler 
+</code></pre><p>This is because, not all Handler types are functions! While I mentioned breifly earlier, since this is not guarunteed, to drastically simplify our code, http.HandlerFunc() has explicitly declared that it only deals with functions! http.HandlerFunc() type even comes with its own http.Server.HTTP() method, so that HandlerFunc() is a Handler() interface type as well!</p>
 <p>So let&rsquo;s look at a practical example of HandlerFunc in action!</p>
-<p>`
-func Router() *http.ServeMux {
-mux := http.NewServeMux()</p>
-<pre><code>//example of unprotected route
-mux.HandleFunc(&quot;/post&quot;, handlers.ServePostPage)
+<pre tabindex="0"><code>func Router() *http.ServeMux {
+	mux := http.NewServeMux()
 
-// protected route
-mux.Handle(&quot;/&quot;, middleware.AuthMiddleware(http.HandlerFunc(handlers.ServeHomePage)))
+    //example of unprotected route
+	mux.HandleFunc(&#34;/post&#34;, handlers.ServePostPage)
 
-return mux
-</code></pre>
-<p>}</p>
-<p>func AuthMiddleware(handler http.HandlerFunc) http.Handler {
-return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-// check if user has valid jwt or cookie
-// if the jet is invalid, send them to a login page, with failure message
-// if the user is validated, send them to the handler we would like to!
+    // protected route
+	mux.Handle(&#34;/&#34;, middleware.AuthMiddleware(http.HandlerFunc(handlers.ServeHomePage)))
+
+    return mux
 }
+
+
+func AuthMiddleware(handler http.HandlerFunc) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        // check if user has valid jwt or cookie
+        // if the jet is invalid, send them to a login page, with failure message
+        // if the user is validated, send them to the handler we would like to!
+    }
 }
-`</p>
-<p>This code above has a few steps that aren&rsquo;t important, so we will use commented pseudocode!</p>
+</code></pre><p>This code above has a few steps that aren&rsquo;t important, so we will use commented pseudocode!</p>
 <p>The important bits, are to see how the router protects a route, and then how AuthMiddleware works! Let&rsquo;s take a look at that now.</p>
 <p>AuthMiddleware takes in a HandlerFunc type as a parameter, and then returns a Handler interface type as a return value. Since we&rsquo;re returning a Handler, we can use AuthMiddleware function as the function value passed into mux.Handle(). The main job of AuthMiddleware is simply to add a layer of authentication, and handle what happens based on success or failure.</p>
 <p>Now that we have put all the peices together, we have a comprehensive view of how Middleware works, and how the different types, interfaces, and functions work to create safe, and effective middleware!</p>
@@ -208,7 +253,7 @@ return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://.saorsadev.com/" >
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
     &copy;  SaorsaDev 2024 
   </a>
     <div>
