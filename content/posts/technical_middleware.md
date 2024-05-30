@@ -7,29 +7,6 @@ draft = false
 
 # Simplifying Middleware in Go
 
-## Cheat Sheet
-
-* Handler type interface
-
-type Handler interface {
-	ServeHTTP(ResponseWriter, *Request)
-}
-
-* Handle() function
-
-func Handle(pattern string, handler Handler)
-
-* HandleFunc() function
-
-func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
-
-* HandlerFunc type
-
-type HandlerFunc func(ResponseWriter, *Request)
-
-* ServeHTTP method
-
-func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)
 
 
 
@@ -131,3 +108,29 @@ The important bits, are to see how the router protects a route, and then how Aut
 AuthMiddleware takes in a HandlerFunc type as a parameter, and then returns a Handler interface type as a return value. Since we're returning a Handler, we can use AuthMiddleware function as the function value passed into mux.Handle(). The main job of AuthMiddleware is simply to add a layer of authentication, and handle what happens based on success or failure.
 
 Now that we have put all the peices together, we have a comprehensive view of how Middleware works, and how the different types, interfaces, and functions work to create safe, and effective middleware! 
+
+## Cheat Sheet
+
+Here's a list of the main concepts we reviewed, and the documentation from the net/http package for each.
+
+* Handler type interface
+
+type Handler interface {
+	ServeHTTP(ResponseWriter, *Request)
+}
+
+* Handle() function
+
+func Handle(pattern string, handler Handler)
+
+* HandleFunc() function
+
+func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+
+* HandlerFunc type
+
+type HandlerFunc func(ResponseWriter, *Request)
+
+* ServeHTTP method
+
+func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)
