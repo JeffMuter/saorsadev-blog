@@ -6,8 +6,15 @@
     <description>Recent content on SaorsaDev</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://.saorsadev.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weekly Dev Update</title>
+      <link>https://.saorsadev.com/posts/wdu_05_31_24/</link>
+      <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://.saorsadev.com/posts/wdu_05_31_24/</guid>
+      <description>Weekly Dev Update Creating Content &amp;amp; Developing User Registration Registration Form This week, what I spent the most time building was the continued work on my registration form. Returning to a sort of mid-level phase, adding sessions to a database, not stored locally in a map. This is nearly complete, but I hope to get that complete, and begin adding tests. I haven&amp;rsquo;t made database unit testing in Golang, so that&amp;rsquo;s something that really excites me.</description>
+    </item>
     <item>
       <title>Simplifying Middleware in Go</title>
       <link>https://.saorsadev.com/posts/technical_middleware/</link>
