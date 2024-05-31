@@ -36,5 +36,12 @@
       <guid>https://.saorsadev.com/posts/wdu_05_18_24/</guid>
       <description>Weekly Dev Update Building a Web Server &amp;amp; Creating This Blog&#xA;Building a Golang Web Server from the ground up I turned a basic empty Golang project, into my first attempt at building a web server. This has been much harder than I thought. There is so much about building a Golang web server that is significantly different from the API&amp;rsquo;s I built in Java in the MVC design pattern. On top of learning new Go concepts, learning a new folder structure, the terms that go along with this kind of project has been seriously jarring.</description>
     </item>
+    <item>
+      <title></title>
+      <link>https://.saorsadev.com/post/post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://.saorsadev.com/post/post/</guid>
+      <description> </description>
+    </item>
   </channel>
 </rss>
