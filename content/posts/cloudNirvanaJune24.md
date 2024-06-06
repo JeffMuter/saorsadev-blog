@@ -48,7 +48,9 @@ Great person to talk to about doing AI projects
 excited about 5 years AGI. Introduced himself by his age : 60 (mayhaps hopeful for life-enhancing tech evolutions)
 technological advancements don't happen in a bubble. If things keep accellerating, it's too difficult for expert to keep up.
 Focus on AI making us better at our jobs, not replacing people. 
-
+Tries to think of AI assistants as employees. They made 3. One specialized for sales and IT. Another made for IT and has knowledge on IT tickets. Another helps developers keep their code to company standards.
+I think it's an interesting metaphor. However, I think these chatbots are extremely specialized to little more than chatbots. I think they are more like an advisor, which are most helpful to new employees.
+Issues with cost. Running it on the cloud. 21k/m for 11k queries. Cost does seem to be a real concern. Cloud costs are getting bulky, let alone the costs to OpenAI / Google.
 
 ### General Notes
 
