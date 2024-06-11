@@ -29,6 +29,7 @@ Having AI knowledge base / experts can help elimainate people's concerns and con
 RAG pattern has seen the best results. They haven't needed to go further.
 Concern that the AI can use cultural terms & phrases that are offensive in different cultures.
 learn the basics of embedding, determining the right way to vectorizing data, chinking, etc.. Good to know for myself.
+
 RAG is being highly promoted, and this pattern was seen as highly hallucination resistant.
 
 ### Community Highlight: Maureen Metcalf : Junell Felsburg : FauxMo AI
@@ -57,3 +58,11 @@ Issues with cost. Running it on the cloud. 21k/m for 11k queries. Cost does seem
 A lot of conversations to try and remind people that AI is another technology, nothing magical, or needing to jump into new service building right now, without doing thorough research into what is actully going to save cose.
 Check out TechLife website for some event page
 I want to work more with RAG ai service pattern, build some cool stuff, clones, chatbots, helpful things, etc.. It does sound like there are real
+
+## Summary of the Conference
+
+I think Cloud Nirvana was amazing. I am happy I went, although I made some mistakes, I don't think I need make them again. My dress code was perfect for a developer-centric conference, but this was much more C-Suite. I definitely need a jacket, that I can wear a more loose /casual / funny shirt underneath, intead of a Golang hoodie I wore. Most everyone there knew each other, which I found really interesting.
+
+Pinak was my favorite speaker. I think his company is both interesting, using Golang as its primary language (or at least the one he personally advocated). I think I took the most notes from his talk, and notes that are valuable because I felt inspired by his presentation, his understanding, and the fact that his background is from engineering, not data / leadership specifically. It makes me wonder if a leadership role is something that is in store for me. I love engineering, building, architecting solutions. I think much of leadership is about meetings, which will always be what pushes me away from it.
+
+Although I didn't meet many new people, I gained some presence in the community, I got to reinforce my learning on what kinds of AI projects to focus on, learned some about the tools people are using to create these projects, it definitely moved me in a direction of being able to speak more proficiently about how to architect, and cautiously approach AI solutions. Important skills I can bring to Wasserstrom, and my own side projects.
