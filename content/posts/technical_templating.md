@@ -1,7 +1,7 @@
 
 +++
 title = 'Technical: Templating in Golang'
-date = 2024-05-31
+date = 2024-06-01
 draft = false
 +++
 
