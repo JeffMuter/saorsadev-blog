@@ -1,83 +1,17 @@
 
 +++
-title = 'Techincal: Templating in Golang'
+title = 'Technical: Templating in Golang'
 date = 2024-05-31
-draft = true
+draft = false
 +++
 
-
-this blog is meant to act as a draft for a post, and my learnings, on Go templating so I can learn it better and implement what I am learning for the web server project at work.
-
-What is a 'pipeline'
-
-Create a template:
-{{ define "templateName" . }} <h1>Stuff inside the template</h1> {{ end }}
-define is best used when you have a static piece of information, like a navbar, or footer, that doesn't change between pages.
-{{ block "templateName" . }} <h1>Another template, using block shorthand.</h1> {{ end }}
-block is used for pages that do have customized data
-
-Understand:
-Functions:
-Parse - parses a string into a template
-ParseFile - parses a file contents into a template
-ParseFiles - Same as before, but multi-files
-ParseGlob - parses many different files, pulls out the templates, and merges them into a single template
-Execute 
-Must
-New - Creates template 
-t := template.New("name")
-Found it mildly important to consider, that if a template with the specified name exists, it we be replaced. So be careful in loops.
-
-Creating variables in templates
-You can actually create variables in templates. Can be useful if you are ranging, or any other scoped action that limits access to fields.
-{{ $name .Name }}
-{{ range .Email }}
-  {{ $name }}: {{ . }} // in the range, you can't access {{ .Name }}, as it's out of scope.
-{{ end }}
-// look into how scoping works in templates. Not 100% sure why {{ .Name }} is out of scope.
-
-? the syntax .  seems to have special meaning. We use it to nab values like .FieldName , but we use it in ranges like:
-{{ range .Email }}
-  {{ . }}
-{{ end }}
-
-I'd like to understand the . , why can it be alone on its own? I understand in a range, it stands for a single Email, since Email is going to be an array, slice, or map. Apparently, the . in the range is 'occupied' by the values inside the Email field. Want to look more into it.
-
-. Notation: In each template, may contain data.
-Like any struct, there are fields, that are set by the handler. These fields can be any data type, including other custom structs. While fields can look as simple as .ImageUrl (string containing the url for an image), they may also become complex when accessing a struct with its own fields: 
-
-{{ range .User.Calendar.PastEvents. }} // range through this User, which has a Calendar type, which has a slice of PastEvents types, each of those with fields of their own, but we'll grab those through the range.
-  {{ .Title }} //grab the title of the individual past event
-  {{ .Date }}
-  {{ .Time }}
-  {{ .Notes }}
-{{ end }}
-
-Now let us shift to talking about the process of dissecting templates for creating a Template type. There are 3 main functions I see when most developers use, or make tutorials on this process:
-ParseFile
-ParseFiles()
-ParseGlob(string filename)
-
-We also may need to dig into the template.Template type,
-Understanding the type reveals a lot of the functions built around it. So here it goes.
-the template.Template type has many core features. After diving into the source cody myself, I decided to leave much of it off for the sake of brevity. 
-
-type Template struct {
-  name string // name of the template
-  *parse.Tree // an AST (abstract syntax tree). Basically contains a name, a list of nodes, and other information. Nodes come in several forms, but they are categorized into Action nodes, and Element nodes. The latter being the node structure for an HTML document, the Action nodes handle the different types of control structures, like when you see 'range' in delims: {{ range .Users }} {{ . }} {{ end }}. This structure allows template.Execute to perform the heavy lifting after the template is setup.
-  *common // complex functionality. Important for me that it contains a map[nameofFunction]reflect.Value  reflect.Value contains an excecutable function, nameofFunction contains the text string you'll find as a flag in a template delimiters like {{ length . }}, length corresponds to the function excecutable in the map, such as func length(s string) int { return len(s) }, in this case, . represents the string param for length. Needless to say, this feels complex to look at, and I have yet to run into a situation where this is populated with anything of note.
-  leftDelim string // looks like {{
-  rightDelim string // looks like }}
-}
-
-After the parsing that occurs from one of the parsing functions (ParseFile, ParseFiles, ParseGlob), it creates a tree that contains individual branches that contain each template. Once all templates are contained in a single text string, a function like template.ExecuteTemplate handles the final step to turn the parse.Tree into an html
-
+# Making Sense of Golang's Templating
 
 In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.
 
 Before diving in, I think the baseline for being able to comprehend what we are doing is: Basic understanding of Golang syntax, as well as some understanding of how an http server works. As well as understanding the structure of HTML syntax.
 
-Templating Syntax:
+## Templating Syntax:
 
 template/navbar.html:
 ```
@@ -91,6 +25,7 @@ template/navbar.html:
   </nav>
 {{ end }}
 ```
+
 index.html:
 ```
 {{ define "baseDocument" }}
@@ -101,24 +36,34 @@ index.html:
 ```
 The above syntax contains all of the elements of core templating, at least for the scope of this article. So let us step through this... 
 
-delimiters: These look like {{ }}, you have leftDelim and rightDelim. What's important here is that whatever is contained within is templating syntax only, and is not part of the typical html document.
+## Delimiters: 
+These look like {{ }}, you have leftDelim and rightDelim. What's important here is that whatever is contained within is templating syntax only, and is not part of the typical html document.
 
-actions: 'define' 'range' 'template'
+## Actions: 
+
+'define' 
+'range' 
+'template'
+
 These actions are declared on the far-left of the delims. While you can add multiple actions within a single set of delims, that is beyond the scope of this article. You may have assertained what these do.
-Define: tells us that we are creating a template, and giving the template a name between parenthises.
+### Define: 
+
+Tells us that we are creating a template, and giving the template a name between parenthises.
 ```
 {{ define "templateName" }}
   <h1>TemplateContent</h1>
 {{ end }}
 ```
 
-Range: declare that we will be looping over a piece of data, which we will explain where that comes from soon. In this case we are looping over individual Users. You declare a single User with a . notation. Assume for now that this is just a string containing a user's name.
+Range:
+Declare that we will be looping over a piece of data, which we will explain where that comes from soon. In this case we are looping over individual Users. You declare a single User with a . notation. Assume for now that this is just a string containing a user's name.
 ```
 {{ range .UserNames }}
   <p>{{ . }}</p>
 {{ end }}
 ```
-Let's see a more gopher-like syntax for this.
+
+Let's see a more gopher-like syntax for this:
 ```
 userNames := make([]string, "john", "jane")
 
@@ -127,7 +72,8 @@ _, currentName := range(userNames) {
 }
 ```
 
-Template: allows us to reference that an existing template with a name declares within quotation marks should exist here, likely the data is dynamic, or repeated, such as the case with a 'navbar' & 'footer', or dynamic, in the likely case of 'content'.
+### Template:
+Allows us to reference that an existing template with a name declares within quotation marks should exist here, likely the data is dynamic, or repeated, such as the case with a 'navbar' & 'footer', or dynamic, in the likely case of 'content'.
 ```
 {{ template "navbar" }}
 ```
@@ -135,7 +81,8 @@ Template: allows us to reference that an existing template with a name declares 
 Just like that, we have overcome the basic syntax for templating. Just like any tool, there is much more you can learn, but for getting through your first few endpoints, this is more than enough to get you where you're trying to go.
 
 Now, let's turn our attention to the text/template & html/template packages. 
-Here's an example folder structure. From what I like, and what I see most templating projects doing, this is the basics:
+
+### Simple Folder Structure:
 ```
 projectName
 --/cmd
@@ -158,7 +105,7 @@ For the sake of brevity, let's assume main.go & router.go do nothing unusual whe
 
 Now that we have the basic folder structure setup, most of our work will take place in the handlers.go file. Let's make some example code to extrapolate from.
 
-handlers.go:
+### handlers.go:
 ```
 package handlers
 
@@ -197,7 +144,9 @@ Great! If you're anything like me, this is an overwhelming amount of confusion. 
 4. What is template.ParseGlob()? This functions job is to create a template! Simple as that. In our implementation, we pass in every template from our template directory from the filepath.Join() function. The important part to know is that we retreived *every* template from the templates directory, and placed them into a template. Whether we use every template isn't our concern. We'll leave that work up to the final important line of this function.
 5. What does ExecuteTemplate do? This function finds the base template from templateName, in this case the "home" template, and consolidates them all into a single template, discarding unnecessary templates, fills any data in the template we need from the 'data', and sets this as this as the response to send back to the user.
 
-Great! Having a very shallow, high level understanding of the core parts of this application is all we needed for this section. After reading through the above code and abstract, you have the core peices of a templating project together. The steps go as follows:
+Great! Having a very shallow, high level understanding of the core parts of this application is all we needed for this section. After reading through the above code and abstract, you have the core peices of a templating project together. 
+
+The steps go as follows:
 
 1. handler sets any required data the template will need.
 2. handler sets the name of the template we want.
@@ -207,21 +156,34 @@ Great! Having a very shallow, high level understanding of the core parts of this
 
 No matter how your application may differ, these are the core components of creating a handler. Now is the section where I want to briefly go over the different functions you can use to acheive different results because, undoubtedly, your project will differ from my own in some way. Not to mention, it is very important that you can comprehend what these functions are doing so that you can flexibly adapt your code, even if you plan to follow my project structure 99% of the way, even a small change might seem insurmountable if you don't understand the functions and underlying type structs that they are built on.
 
-1. template.ParseGLob has several variations, let's talk about the two I see most often, template.Parse, and template.ParseFiles. 
+### template.ParseGLob:
+This has several variations, let's talk about the two I see most often, template.Parse, and template.ParseFiles. 
 func (t *Template) Parse(text string) (*Template, error) 
 
-Parse will return a template, just like all of these template-creating functions. It takes in a pure string, which is expected to be a full template. Whether you're writing it yourself, like var myTemp string = `{{ define "tmpl" }}<h1>A Template Example</h1>{{ end }}` , or you're retreiving a string that has a template within it from a database, it doesn't matter, Parse will search the string for the template, and save it to a template varaible, or produce a non-nil error in the attempt.
+Parse will return a template, just like all of these template-creating functions. It takes in a pure string, which is expected to be a full template. Whether you're writing it yourself, like 
+```
+var myTemp string = `{{ define "tmpl" }}<h1>A Template Example</h1>{{ end }}`
+```
 
+Or you're retreiving a string that has a template within it from a database, it doesn't matter, Parse will search the string for the template, and save it to a template varaible, or produce a non-nil error in the attempt.
+```
 func (t *Template) ParseFiles(filenames ...string) (*Template, error)
+```
 
-This is the variation I see used most often in tutorials. I am not a big fan of the use of variadic params, I think a simple slice is perfectly readable, so let's take a look at the param:
-``` ...string ```
-This param is basically declaring you can send in any number of strings as params, or none at all. While variadics, in my opinion, are less readable, bad on performance, and non in-character with Go's philosphy of simplicty, and single-method of ways to accomplish similar goals, we're stuck with it for today. In ParseFiles, you pass in the file paths as strings to all the templates you know you'll need. If your "home" template only needs a "footer" and "navbar" template, for example, you can write:
+This is the variation I often see in tutorials. I am not a big fan of the use of variadic params, I think a simple slice is perfectly readable, so let's take a look at the param:
+```
+...string 
+ ```
+
+In ParseFiles, you pass in the file paths as strings to all the templates you know you'll need. If your "home" template only needs a "footer" and "navbar" template, for example, you can write:
 ```
 template, err := template.ParseFiles("home", "navbar", "footer")
 ```
 
+Now, let's return to the glob pattern we used earlier:
+```
 func (t *Template) ParseGlob(pattern string) (*Template, error)
+```
 
 This is the method we use to collect and parse all templates found within a glob of files (a glob is a pattern used to match file names). Functionally performing the same task as ParseFiles and Parse, but if you have a large number of templates (Even medium sized websites may have 10+ templates, and you don't want to have to name them each with ParseFiles every time you make a handler). Since tutorials are normally demos, this is the template-creator that I see used least often.
 
