@@ -101,9 +101,9 @@ index.html:
 ```
 The above syntax contains all of the elements of core templating, at least for the scope of this article. So let us step through this... 
 
-delimiters: These look like {{ }}, you have leftDelim and rightDelim. What's important here is that whatever is contained within is templating syntax only, and is not part of the typical html document.
+Delimiters: These look like {{ }}, you have leftDelim and rightDelim. What's important here is that whatever is contained within is templating syntax only, and is not part of the typical html document.
 
-actions: 'define' 'range' 'template'
+Actions: 'define' 'range' 'template'
 These actions are declared on the far-left of the delims. While you can add multiple actions within a single set of delims, that is beyond the scope of this article. You may have assertained what these do.
 Define: tells us that we are creating a template, and giving the template a name between parenthises.
 ```
