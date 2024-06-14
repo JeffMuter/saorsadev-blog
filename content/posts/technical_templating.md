@@ -1,11 +1,11 @@
 
 +++
-title = 'Technical: Templating in Golang'
+title = 'Making Sense of Golangs Templating'
 date = 2024-06-01
 draft = false
 +++
 
-# Making Sense of Golang's Templating
+![gopher constructs a ball of light in pixel art style](/templating_technical.webp)
 
 In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.
 

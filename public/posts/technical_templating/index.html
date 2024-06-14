@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Technical: Templating in Golang | SaorsaDev</title>
+    <title>Making Sense of Golangs Templating | SaorsaDev</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Making Sense of Golang&rsquo;s Templating In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
+    <meta name="description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
     <meta name="generator" content="Hugo 0.127.0">
     
     
@@ -36,22 +36,22 @@
 
     <meta property="og:url" content="https://.saorsadev.com/posts/technical_templating/">
   <meta property="og:site_name" content="SaorsaDev">
-  <meta property="og:title" content="Technical: Templating in Golang">
-  <meta property="og:description" content="Making Sense of Golang’s Templating In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
+  <meta property="og:title" content="Making Sense of Golangs Templating">
+  <meta property="og:description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-06-01T00:00:00+00:00">
     <meta property="article:modified_time" content="2024-06-01T00:00:00+00:00">
 
-  <meta itemprop="name" content="Technical: Templating in Golang">
-  <meta itemprop="description" content="Making Sense of Golang’s Templating In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
+  <meta itemprop="name" content="Making Sense of Golangs Templating">
+  <meta itemprop="description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
   <meta itemprop="datePublished" content="2024-06-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-06-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2334">
+  <meta itemprop="wordCount" content="2329">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Technical: Templating in Golang">
-  <meta name="twitter:description" content="Making Sense of Golang’s Templating In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
+  <meta name="twitter:title" content="Making Sense of Golangs Templating">
+  <meta name="twitter:description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
 
 	
   </head>
@@ -124,7 +124,7 @@
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">Technical: Templating in Golang</h1>
+      <h1 class="f1 athelas mt3 mb1">Making Sense of Golangs Templating</h1>
       
       
       
@@ -134,7 +134,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="making-sense-of-golangs-templating">Making Sense of Golang&rsquo;s Templating</h1>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/templating_technical.webp" alt="gopher constructs a ball of light in pixel art style"></p>
 <p>In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.</p>
 <p>Before diving in, I think the baseline for being able to comprehend what we are doing is: Basic understanding of Golang syntax, as well as some understanding of how an http server works. As well as understanding the structure of HTML syntax.</p>
 <h2 id="templating-syntax">Templating Syntax:</h2>
