@@ -19,7 +19,7 @@ jobs:
         hugo-version: 'latest'
 
     - name: Build the site
-      run: hugo
+      run: HUGO_ENV=production hugo
 
     - name: Verify Hugo build
       run: |

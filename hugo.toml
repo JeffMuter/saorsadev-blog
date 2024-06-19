@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'SaorsaDev'
 theme = 'ananke'
 
+[params]
+  noindex = false
+  nofollow = false
+
 [outputs]
   home = ["HTML", "RSS"]
   section = ["HTML"]
