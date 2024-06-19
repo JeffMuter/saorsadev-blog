@@ -7,10 +7,6 @@ draft = false
 
 # Simplifying Middleware in Go
 
-
-
-
-
 I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.
 
 ```
