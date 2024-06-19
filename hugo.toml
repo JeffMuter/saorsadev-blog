@@ -1,7 +1,7 @@
 baseURL = 'https://saorsadev.com'
 languageCode = 'en-us'
 title = 'SaorsaDev'
-theme = 'ananke'
+theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
 
 [params]
   noindex = false
@@ -12,7 +12,6 @@ theme = 'ananke'
   section = ["HTML"]
   page = ["HTML"]
   taxonomy = ["HTML"]
-  taxonomyTerm = ["HTML"]
 
 [mediaTypes]
   [mediaTypes."text/html"]
