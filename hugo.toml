@@ -1,7 +1,7 @@
-baseURL = 'https://saorsadev.com'
-languageCode = 'en-us'
-title = 'SaorsaDev'
-theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
+baseURL = "https://saorsadev.com"
+languageCode = "en-us"
+title = "SaorsaDev"
+theme = "ananke"
 
 [params]
   noindex = false

@@ -2,41 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://.saorsadev.com/posts/</loc>
+    <loc>https://saorsadev.com/posts/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/</loc>
+    <loc>https://saorsadev.com/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/posts/wdu_06_14_24/</loc>
+    <loc>https://saorsadev.com/posts/wdu_06_14_24/</loc>
     <lastmod>2024-06-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/posts/wdu_6_07_24/</loc>
+    <loc>https://saorsadev.com/posts/wdu_6_07_24/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/posts/technical_templating/</loc>
+    <loc>https://saorsadev.com/posts/technical_templating/</loc>
     <lastmod>2024-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/posts/wdu_05_31_24/</loc>
+    <loc>https://saorsadev.com/posts/wdu_05_31_24/</loc>
     <lastmod>2024-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/posts/technical_middleware/</loc>
+    <loc>https://saorsadev.com/posts/technical_middleware/</loc>
     <lastmod>2024-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/posts/wdu_05_24_24/</loc>
+    <loc>https://saorsadev.com/posts/wdu_05_24_24/</loc>
     <lastmod>2024-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/posts/wdu_05_18_24/</loc>
+    <loc>https://saorsadev.com/posts/wdu_05_18_24/</loc>
     <lastmod>2024-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://.saorsadev.com/post/post/</loc>
+    <loc>https://saorsadev.com/post/post/</loc>
   </url><url>
-    <loc>https://.saorsadev.com/posts/cloudnirvanajune24/</loc>
+    <loc>https://saorsadev.com/categories/</loc>
   </url><url>
-    <loc>https://.saorsadev.com/categories/</loc>
+    <loc>https://saorsadev.com/post/</loc>
   </url><url>
-    <loc>https://.saorsadev.com/post/</loc>
-  </url><url>
-    <loc>https://.saorsadev.com/tags/</loc>
+    <loc>https://saorsadev.com/tags/</loc>
   </url>
 </urlset>
