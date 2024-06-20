@@ -12,12 +12,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.2438bcafd7af9675c426d1a4afcd16cfff18e4e10f401071e45b5ccd3be40a0d.css" >
 
 
 
@@ -31,10 +31,10 @@
     
 
     
-      <link rel="canonical" href="https://.saorsadev.com/posts/technical_middleware/">
+      <link rel="canonical" href="https://saorsadev.com/posts/technical_middleware/">
     
 
-    <meta property="og:url" content="https://.saorsadev.com/posts/technical_middleware/">
+    <meta property="og:url" content="https://saorsadev.com/posts/technical_middleware/">
   <meta property="og:site_name" content="SaorsaDev">
   <meta property="og:title" content="Simplifying Middleware in Go">
   <meta property="og:description" content="Simplifying Middleware in Go I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.">
@@ -53,10 +53,15 @@
   <meta name="twitter:title" content="Simplifying Middleware in Go">
   <meta name="twitter:description" content="Simplifying Middleware in Go I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.">
 
+      
+  
+
+
+    
 	
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -83,16 +88,6 @@
     </div>
   </div>
 </nav>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HTDE52LSHR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HTDE52LSHR');
-</script>
 
     </div>
   </header>
@@ -244,7 +239,7 @@ ServeHTTP(ResponseWriter, *Request)
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://.saorsadev.com/" >
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://saorsadev.com/" >
     &copy;  SaorsaDev 2024 
   </a>
     <div>

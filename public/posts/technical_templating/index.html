@@ -12,12 +12,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.2438bcafd7af9675c426d1a4afcd16cfff18e4e10f401071e45b5ccd3be40a0d.css" >
 
 
 
@@ -31,10 +31,10 @@
     
 
     
-      <link rel="canonical" href="https://.saorsadev.com/posts/technical_templating/">
+      <link rel="canonical" href="https://saorsadev.com/posts/technical_templating/">
     
 
-    <meta property="og:url" content="https://.saorsadev.com/posts/technical_templating/">
+    <meta property="og:url" content="https://saorsadev.com/posts/technical_templating/">
   <meta property="og:site_name" content="SaorsaDev">
   <meta property="og:title" content="Making Sense of Golangs Templating">
   <meta property="og:description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
@@ -53,10 +53,15 @@
   <meta name="twitter:title" content="Making Sense of Golangs Templating">
   <meta name="twitter:description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.">
 
+      
+  
+
+
+    
 	
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -83,16 +88,6 @@
     </div>
   </div>
 </nav>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HTDE52LSHR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HTDE52LSHR');
-</script>
 
     </div>
   </header>
@@ -155,13 +150,9 @@
   {{ template &#34;footer&#34; }}
 {{ end }}
 </code></pre><p>The above syntax contains all of the elements of core templating, at least for the scope of this article. So let us step through this&hellip;</p>
-<h2 id="delimiters">Delimiters:</h2>
-<p>These look like {{ }}, you have leftDelim and rightDelim. What&rsquo;s important here is that whatever is contained within is templating syntax only, and is not part of the typical html document.</p>
-<h2 id="actions">Actions:</h2>
-<p>&lsquo;define&rsquo;
-&lsquo;range&rsquo;
-&rsquo;template&rsquo;</p>
-<p>These actions are declared on the far-left of the delims. While you can add multiple actions within a single set of delims, that is beyond the scope of this article. You may have assertained what these do.</p>
+<p>Delimiters: These look like {{ }}, you have leftDelim and rightDelim. What&rsquo;s important here is that whatever is contained within is templating syntax only, and is not part of the typical html document.</p>
+<p>Actions: &lsquo;define&rsquo; &lsquo;range&rsquo; &rsquo;template&rsquo;
+These actions are declared on the far-left of the delims. While you can add multiple actions within a single set of delims, that is beyond the scope of this article. You may have assertained what these do.</p>
 <h3 id="define">Define:</h3>
 <p>Tells us that we are creating a template, and giving the template a name between parenthises.</p>
 <pre tabindex="0"><code>{{ define &#34;templateName&#34; }}
@@ -287,7 +278,7 @@ func (t *Template) Parse(text string) (*Template, error)</p>
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://.saorsadev.com/" >
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://saorsadev.com/" >
     &copy;  SaorsaDev 2024 
   </a>
     <div>
