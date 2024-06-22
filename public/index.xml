@@ -6,8 +6,15 @@
     <description>Recent content on SaorsaDev</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://saorsadev.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weekly Dev Update 5</title>
+      <link>https://saorsadev.com/posts/wdu_06_20_24/</link>
+      <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://saorsadev.com/posts/wdu_06_20_24/</guid>
+      <description>Professional API Research At work, I had been given the opportunity to do a ton of research into what API we plan to use for a service. Never have I been required to go this deep on the documentation of several different API&amp;rsquo;s, their pricing plans. Going back and forth with our analytics team to see what exactly we needed. It forced me to flex my brain in a very different way.</description>
+    </item>
     <item>
       <title>Weekly Dev Update 4</title>
       <link>https://saorsadev.com/posts/wdu_06_14_24/</link>
