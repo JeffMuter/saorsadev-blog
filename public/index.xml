@@ -6,21 +6,21 @@
     <description>Recent content on SaorsaDev</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://saorsadev.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weekly Dev Update 7</title>
+      <link>https://saorsadev.com/posts/wdu_08_2_24/</link>
+      <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://saorsadev.com/posts/wdu_08_2_24/</guid>
+      <description>More Game-Dev | Vacation | Focus Game Dev Since beginning to work on my game, I haven&amp;rsquo;t made many posts on the blog. I have been engrossed in the project from head to toe. I haven&amp;rsquo;t ever found any project quite so fun to build and the challenges have been enlightening.&#xA;Part of what convinced me to make a game, was watching a video by Jonathan Blow, discussing that, when you get good at one kind of programming, it creates a plateau.</description>
+    </item>
     <item>
       <title>Weekly Dev Update 6</title>
       <link>https://saorsadev.com/posts/wdu_06_28_24/</link>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       <guid>https://saorsadev.com/posts/wdu_06_28_24/</guid>
       <description>GoGameDevDiscord This week I made a Discord Server for Game Developers using Golang:&#xA;https://discord.gg/fhDnKr2Q&#xA;GoGameDevProgress My own game written in Go is coming along. I plan to make a full post about my experiences so far. I have had a ton of trouble with it, however, I am really proud of what it is and has accomplished so far. I still have many hurdles to overcome, so just one hurdle at a time&amp;hellip;</description>
-    </item>
-    <item>
-      <title>Weekly Dev Update 7</title>
-      <link>https://saorsadev.com/posts/wdu_08_2_24/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://saorsadev.com/posts/wdu_08_2_24/</guid>
-      <description>More Game-Dev | Vacation | Focus Game Dev Since beginning to work on my game, I haven&amp;rsquo;t made many posts on the blog. I have been engrossed in the project from head to toe. I haven&amp;rsquo;t ever found any project quite so fun to build and the challenges have been enlightening.&#xA;Part of what convinced me to make a game, was watching a video by Jonathan Blow, discussing that, when you get good at one kind of programming, it creates a plateau.</description>
     </item>
     <item>
       <title>Weekly Dev Update 5</title>
