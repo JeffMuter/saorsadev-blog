@@ -12,6 +12,7 @@ theme = "ananke"
   section = ["HTML"]
   page = ["HTML"]
   taxonomy = ["HTML"]
+  term = ["HTML"]
 
 [mediaTypes]
   [mediaTypes."text/html"]
