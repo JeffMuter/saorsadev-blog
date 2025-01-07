@@ -4,102 +4,93 @@
     <title>SaorsaDev</title>
     <link>https://saorsadev.com/</link>
     <description>Recent content on SaorsaDev</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://saorsadev.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Jan 2025 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://saorsadev.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yearly Dev Update: 2025</title>
+      <link>https://saorsadev.com/posts/ydu2025/</link>
+      <pubDate>Sun, 05 Jan 2025 12:00:00 +0000</pubDate>
+      <guid>https://saorsadev.com/posts/ydu2025/</guid>
+      <description>&lt;h2 id=&#34;repo-status-updates-of-the-year&#34;&gt;Repo Status Updates of The Year&lt;/h2&gt;&#xA;&lt;h3 id=&#34;saorsadev-blog&#34;&gt;SaorsaDev Blog&lt;/h3&gt;&#xA;&lt;p&gt;&lt;em&gt;complete&lt;/em&gt;&#xA;This blog was made just this year, believe it or not! I made it to try and draw me away from LinkedIn. But LinkedIn feels so much more casual, I&amp;rsquo;ve always opted in that direction when able. This year, I&amp;rsquo;d like to get better at feeling like my LinkedIn posts could just be blogs I link to. But that means &lt;em&gt;way&lt;/em&gt; more content on this blog, which isn&amp;rsquo;t a bad thing, it&amp;rsquo;s just a bit of a transition. Nonetheless, despite a lot of complications with configuring the Ananke theme on this blog, it seems to have worked out for the best.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Weekly Dev Update 7</title>
       <link>https://saorsadev.com/posts/wdu_08_2_24/</link>
       <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/wdu_08_2_24/</guid>
-      <description>More Game-Dev | Vacation | Focus Game Dev Since beginning to work on my game, I haven&amp;rsquo;t made many posts on the blog. I have been engrossed in the project from head to toe. I haven&amp;rsquo;t ever found any project quite so fun to build and the challenges have been enlightening.
-Part of what convinced me to make a game, was watching a video by Jonathan Blow, discussing that, when you get good at one kind of programming, it creates a plateau.</description>
+      <description>&lt;h1 id=&#34;more-game-dev--vacation--focus&#34;&gt;More Game-Dev | Vacation | Focus&lt;/h1&gt;&#xA;&lt;h2 id=&#34;game-dev&#34;&gt;Game Dev&lt;/h2&gt;&#xA;&lt;p&gt;Since beginning to work on my game, I haven&amp;rsquo;t made many posts on the blog. I have been engrossed in the project from head to toe. I haven&amp;rsquo;t ever found any project quite so fun to build and the challenges have been enlightening.&lt;/p&gt;&#xA;&lt;p&gt;Part of what convinced me to make a game, was watching a video by Jonathan Blow, discussing that, when you get good at one kind of programming, it creates a plateau. You tend to overcome the same similar problem over and over again. Even if there are a hundred problems you might be solving, there are a hundred thousand problems that exist, but you&amp;rsquo;ll never run into the other 99.9% of problems if you only ever program in one narrow industry.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Weekly Dev Update 6</title>
       <link>https://saorsadev.com/posts/wdu_06_28_24/</link>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/wdu_06_28_24/</guid>
-      <description>GoGameDevDiscord This week I made a Discord Server for Game Developers using Golang:
-https://discord.gg/fhDnKr2Q
-GoGameDevProgress My own game written in Go is coming along. I plan to make a full post about my experiences so far. I have had a ton of trouble with it, however, I am really proud of what it is and has accomplished so far. I still have many hurdles to overcome, so just one hurdle at a time&amp;hellip;</description>
+      <description>&lt;h2 id=&#34;gogamedevdiscord&#34;&gt;GoGameDevDiscord&lt;/h2&gt;&#xA;&lt;p&gt;This week I made a Discord Server for Game Developers using Golang:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://discord.gg/fhDnKr2Q&#34;&gt;https://discord.gg/fhDnKr2Q&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;gogamedevprogress&#34;&gt;GoGameDevProgress&lt;/h2&gt;&#xA;&lt;p&gt;My own game written in Go is coming along. I plan to make a full post about my experiences so far. I have had a ton of trouble with it, however, I am really proud of what it is and has accomplished so far. I still have many hurdles to overcome, so just one hurdle at a time&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Weekly Dev Update 5</title>
       <link>https://saorsadev.com/posts/wdu_06_20_24/</link>
       <pubDate>Fri, 21 Jun 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/wdu_06_20_24/</guid>
-      <description>Professional API Research At work, I had been given the opportunity to do a ton of research into what API we plan to use for a service. Never have I been required to go this deep on the documentation of several different API&amp;rsquo;s, their pricing plans. Going back and forth with our analytics team to see what exactly we needed. It forced me to flex my brain in a very different way.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://saorsadev.com/obsidian_presentation.webp&#34; alt=&#34;gopher presents a giant purple gem to an audience of pixelated gophers&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;professional-api-research&#34;&gt;Professional API Research&lt;/h2&gt;&#xA;&lt;p&gt;At work, I had been given the opportunity to do a ton of research into what API we plan to use for a service. Never have I been required to go this deep on the documentation of several different API&amp;rsquo;s, their pricing plans. Going back and forth with our analytics team to see what exactly we needed. It forced me to flex my brain in a very different way. Whiile I wouldn&amp;rsquo;t say I want to do something like that all the time, I found it crucial experience, and I certainly hope I made the right decisions. One of the many harms of not having a more senior developer to rely on, is that the weight of responsibility falls square on my own shoulders.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Weekly Dev Update 4</title>
       <link>https://saorsadev.com/posts/wdu_06_14_24/</link>
       <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/wdu_06_14_24/</guid>
-      <description>Templating Blog Post / Completed Templating/Golang/Postgres Work Project / GameBoy Color Development Templating Blog Post As I struggled with a work project that required some midly complex Golang templating, I came up against the reality that I simply wasn&amp;rsquo;t going to be able to get a fix to my issue without either abusing ChatGPT, or learning it thoroughly myself. Of course the first is the quick and easy option, however, it leaves that come impossible to maintain, and not to mention, I am left no better of a developer.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://saorsadev.com/wdu_4.webp&#34; alt=&#34;gopher programming a gasmeboy game&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;templating-blog-post--completed-templatinggolangpostgres-work-project--gameboy-color-development&#34;&gt;Templating Blog Post / Completed Templating/Golang/Postgres Work Project / GameBoy Color Development&lt;/h1&gt;&#xA;&lt;h2 id=&#34;templating-blog-post&#34;&gt;Templating Blog Post&lt;/h2&gt;&#xA;&lt;p&gt;As I struggled with a work project that required some midly complex Golang templating, I came up against the reality that I simply wasn&amp;rsquo;t going to be able to get a fix to my issue without either abusing ChatGPT, or learning it thoroughly myself. Of course the first is the quick and easy option, however, it leaves that come impossible to maintain, and not to mention, I am left no better of a developer. So I hit the books, read half a dozen articles on the topic, twice over in some cases, then spent hours sifting through Go&amp;rsquo;s documentation in the text/template package. It was a great experience. I feel every time I decide to roll up my sleeves and write and blog post on a topic, I become painfully competent on the topic. This is only the second major roadblock I have found to justify this level of throroughness, but as I thought, I am walking away feeling very confident. After going through this with the http/net package in Golang, I still have a scary-good memory on the precise documentation, even though I&amp;rsquo;ve only programmed through it a couple times on my own. There&amp;rsquo;s a very big difference between feeling like I can absolutely solve a problem with time, and another version where I have, beyond a memorized understanding, but a comprehensive knowledge on the subject, enough that I could write it out on a whiteboard. It is a fantastic feeling, to the point where I am looking more and more for an excuse to start studying something in a way where I can start writing a blog post on it. Right now, I think I may consider an advanced tutorial on templating, since I didn&amp;rsquo;t get to go too deeply into the Template type and its fields, or the context type within the Template type.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Weekly Dev Update 3</title>
       <link>https://saorsadev.com/posts/wdu_6_07_24/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/wdu_6_07_24/</guid>
-      <description>Weekly Dev Update 3 Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts Conference This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI.</description>
+      <description>&lt;h1 id=&#34;weekly-dev-update-3&#34;&gt;Weekly Dev Update 3&lt;/h1&gt;&#xA;&lt;h3 id=&#34;conference--rag-ai-presentation--developing-new-web-server-at-work--closing-thoughts&#34;&gt;Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts&lt;/h3&gt;&#xA;&lt;h2 id=&#34;conference&#34;&gt;Conference&lt;/h2&gt;&#xA;&lt;p&gt;This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI. I thought it was interesting to see the interests, and focuses of C-Suite level individuals. What AI services companies are building, what apps crashed, what apps lost money, what apps are succeeding, and what differenciates them. There was a lot of level-headedness. Almost all of the presenters warned people about the AI-Hype cycle, as a reminder of the recent Cloud &amp;amp; blockchain hype cycles. It was the first time I had heard that there was a cultural shift in the C-Suite world where many reputable leaders lost their jobs, and seriously damaged a lot of companies, and thereby people&amp;rsquo;s lives, by migrating to the cloud before running the numbers. Many of the leaders are finding it very difficult to see the benefit of creating AI data &amp;amp; developer teams to save possibly shallow amounts of costs after that, especially if these services need maintained. Many of them are becoming far more interested in open source projects like Llama3 and beyond. There was a lot of praise for RAG (retreival augmented Generation) AI services. Where this pattern has been serving companies, and clients best, by being the most minimal approach, with the least overhead on development time to build.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Making Sense of Golangs Templating</title>
       <link>https://saorsadev.com/posts/technical_templating/</link>
       <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/technical_templating/</guid>
-      <description>In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://saorsadev.com/templating_technical.webp&#34; alt=&#34;gopher constructs a ball of light in pixel art style&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Weekly Dev Update 2</title>
       <link>https://saorsadev.com/posts/wdu_05_31_24/</link>
       <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/wdu_05_31_24/</guid>
-      <description>Weekly Dev Update Creating Content &amp;amp; Developing User Registration Registration Form This week, what I spent the most time building was the continued work on my registration form. Returning to a sort of mid-level phase, adding sessions to a database, not stored locally in a map. This is nearly complete, but I hope to get that complete, and begin adding tests. I haven&amp;rsquo;t made database unit testing in Golang, so that&amp;rsquo;s something that really excites me.</description>
+      <description>&lt;h1 id=&#34;weekly-dev-update&#34;&gt;Weekly Dev Update&lt;/h1&gt;&#xA;&lt;h2 id=&#34;creating-content--developing-user-registration&#34;&gt;Creating Content &amp;amp; Developing User Registration&lt;/h2&gt;&#xA;&lt;h3 id=&#34;registration-form&#34;&gt;Registration Form&lt;/h3&gt;&#xA;&lt;p&gt;This week, what I spent the most time building was the continued work on my registration form. Returning to a sort of mid-level phase, adding sessions to a database, not stored locally in a map. This is nearly complete, but I hope to get that complete, and begin adding tests. I haven&amp;rsquo;t made database unit testing in Golang, so that&amp;rsquo;s something that really excites me. I am finding that I really enjoy, as a developer, the experience of dealing with, and navigating through the processing, manipulating of data. Working with a database, architecting multi-step solutions, and producing useful data to the user, is something that feels exciting to me right now.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Simplifying Middleware in Go</title>
       <link>https://saorsadev.com/posts/technical_middleware/</link>
       <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/technical_middleware/</guid>
-      <description>Simplifying Middleware in Go I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.</description>
+      <description>&lt;h1 id=&#34;simplifying-middleware-in-go&#34;&gt;Simplifying Middleware in Go&lt;/h1&gt;&#xA;&lt;p&gt;I want to discuss some of the discoveries, and challenges, I ran into while building a Golang http web server, and making the authentication part of the application. Since I have not been using any frameworks, the process does get a bit deep, far moreso, comparatively to the ease by which other frameworks and languages remove the technical details of an application via abstractions. However, I stand by the idea that understanding a process without abstractions, is the best way to approach bugs, foreign code(code you are unfamiliar with), and also helps you to pick up new concepts quickly when encountering something novel.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Weekly Dev Update 1</title>
       <link>https://saorsadev.com/posts/wdu_05_24_24/</link>
       <pubDate>Thu, 23 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/wdu_05_24_24/</guid>
-      <description>Weekly Dev Update 1 Arden Labs Golang in AI Webinar
-This week I had a chance encounter! I was listening to &amp;lsquo;Cup O&amp;rsquo; Go&#39; podcast, where Bill Kennedy mentioned some of the trainings that Ardan Lab does, which led to me seeing the Ardan Labs was sponsoring a free Webinar on how to use Golang to create AI services! So many of my side projects related to AI were shelved because of how commited I am to learning Golang.</description>
+      <description>&lt;h1 id=&#34;weekly-dev-update-1&#34;&gt;Weekly Dev Update 1&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Arden Labs Golang in AI Webinar&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This week I had a chance encounter! I was listening to &amp;lsquo;Cup O&amp;rsquo; Go&amp;rsquo; podcast, where Bill Kennedy mentioned some of the trainings that Ardan Lab does, which led to me seeing the Ardan Labs was sponsoring a free Webinar on how to use Golang to create AI services! So many of my side projects related to AI were shelved because of how commited I am to learning Golang. However, I have had some bad experiences with conferences of late. Where I kept attending teaching events where the content was far too broad, tailored too specifically to beginners, or my favorite &amp;rsquo;this could have been an email&amp;rsquo;. However, I was delightfully surprised at the level of this Webinar. I felt like my horizons expanded for what kinds of projects I can build using AI with strictly Golang! I learned a lot more about the &amp;lsquo;RAG&amp;rsquo; approach, and how fine-tuning should generally be seen as a last resort. I have a lot of reading to do for Golang, but this really inspired me to consider giving some of the Ardan Lab Golang courses a shot in the future, once I&amp;rsquo;ve at least hit an intermediate level.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Weekly Dev Update 0</title>
       <link>https://saorsadev.com/posts/wdu_05_18_24/</link>
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://saorsadev.com/posts/wdu_05_18_24/</guid>
-      <description>Weekly Dev Update Building a Web Server &amp;amp; Creating This Blog  Building a Golang Web Server from the ground up I turned a basic empty Golang project, into my first attempt at building a web server. This has been much harder than I thought. There is so much about building a Golang web server that is significantly different from the API&amp;rsquo;s I built in Java in the MVC design pattern.</description>
+      <description>&lt;h1 id=&#34;weekly-dev-update&#34;&gt;Weekly Dev Update&lt;/h1&gt;&#xA;&lt;h2 id=&#34;building-a-web-server--creating-this-blog&#34;&gt;Building a Web Server &amp;amp; Creating This Blog&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Building a Golang Web Server from the ground up&#xA;I turned a basic empty Golang project, into my first attempt at building a web server. This has been much harder than I thought. There is so much about building a Golang web server that is significantly different from the API&amp;rsquo;s I built in Java in the MVC design pattern. On top of learning new Go concepts, learning a new folder structure, the terms that go along with this kind of project has been seriously jarring. Several stages of getting discouraged, needing to realign my expectations on myself, and reminding myself that it&amp;rsquo;s okay to be stupid&amp;hellip; Being stupid is the first step to becoming better&amp;hellip; If I want to get better, I have to be willing to be stupid.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;One of the interesting challenges is learning about routers, handlers, and the ability to have seperate handlers that trigger on the same request. One handler to perform actions on the database, another action to send up the proper html. Somehow, this process felt well hidden from me during my tenure of building Java &amp;amp; Vue full stack applications. But building it in Golang, all on one backend, has felt much more fundemental and given me a better understanding of what the large front end frameworks are doing. This feels like a necessary learning requirement for being able to properly understand, and demystify how web servers work. All of this came through hours of untangling, building, deconstructing, and building better after some more research once I realized my way was incoherent in way way or the other. Still, it feels like a releif to uncover more puzzle peices. With this, I can feel myself growing again. I&amp;rsquo;ve been having ideas around this. How I am spending time learning more fundemental computer science concepts, instead of becoming competent in a powerful sbatraction tool, like React, for example. While React is a very useful skill, I think, without the fundemental understanding to back it up, you have a limit to how far you can advance as a programmer. Instead, I am trying to challenge myself constantly, which creates a lot of friction. But that friction creates the framework where I can learn a new tool, and be much more competent, in a much shorter timeframe, and without the limiter on my skill level. I am very appreciative for this phase of growth. They come and go, but every time they come, I feel much stronger on the other side.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title></title>
+      <link>https://saorsadev.com/posts/devblog_prism_breeding_challenge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://saorsadev.com/posts/devblog_prism_breeding_challenge/</guid>
+      <description>&lt;h1 id=&#34;prism-devblog-creature-fusion&#34;&gt;Prism DevBlog: Creature Fusion&lt;/h1&gt;&#xA;&lt;h3 id=&#34;the-challenge&#34;&gt;the challenge&lt;/h3&gt;&#xA;&lt;p&gt;I always had this fun&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

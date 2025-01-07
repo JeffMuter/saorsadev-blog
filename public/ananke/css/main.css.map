@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/jefferymuter/repos/go/saorsadev-blog",
+	"sourceRoot": "/home/x12/repos/saorsadev-blog",
 	"sources": [
 		"ananke/css/main.css"
 	],

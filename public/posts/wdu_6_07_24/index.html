@@ -1,244 +1,154 @@
 <!DOCTYPE html>
 <html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Weekly Dev Update 3 | SaorsaDev</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Weekly Dev Update 3
+Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts
+Conference
+This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI. I thought it was interesting to see the interests, and focuses of C-Suite level individuals. What AI services companies are building, what apps crashed, what apps lost money, what apps are succeeding, and what differenciates them. There was a lot of level-headedness. Almost all of the presenters warned people about the AI-Hype cycle, as a reminder of the recent Cloud &amp; blockchain hype cycles. It was the first time I had heard that there was a cultural shift in the C-Suite world where many reputable leaders lost their jobs, and seriously damaged a lot of companies, and thereby people&rsquo;s lives, by migrating to the cloud before running the numbers. Many of the leaders are finding it very difficult to see the benefit of creating AI data &amp; developer teams to save possibly shallow amounts of costs after that, especially if these services need maintained. Many of them are becoming far more interested in open source projects like Llama3 and beyond. There was a lot of praise for RAG (retreival augmented Generation) AI services. Where this pattern has been serving companies, and clients best, by being the most minimal approach, with the least overhead on development time to build.">
+    <meta name="generator" content="Hugo 0.136.5">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title>Weekly Dev Update 3 | SaorsaDev</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="description"
-    content="Weekly Dev Update 3 Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts Conference This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI.">
-  <meta name="generator" content="Hugo 0.131.0">
-
-
-
-
-  <meta name="robots" content="noindex, nofollow">
-
-
-
-
-  <link rel="stylesheet" href="/ananke/css/main.min.css">
-
-
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
 
 
 
+    
 
+    
+      
 
+    
 
+    
 
+    
+      <link rel="canonical" href="https://saorsadev.com/posts/wdu_6_07_24/">
+    
 
-
-
-
-  <link rel="canonical" href="https://saorsadev.com/posts/wdu_6_07_24/">
-
-
-  <meta property="og:url" content="https://saorsadev.com/posts/wdu_6_07_24/">
+    <meta property="og:url" content="https://saorsadev.com/posts/wdu_6_07_24/">
   <meta property="og:site_name" content="SaorsaDev">
   <meta property="og:title" content="Weekly Dev Update 3">
-  <meta property="og:description"
-    content="Weekly Dev Update 3 Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts Conference This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI.">
+  <meta property="og:description" content="Weekly Dev Update 3 Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts Conference This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI. I thought it was interesting to see the interests, and focuses of C-Suite level individuals. What AI services companies are building, what apps crashed, what apps lost money, what apps are succeeding, and what differenciates them. There was a lot of level-headedness. Almost all of the presenters warned people about the AI-Hype cycle, as a reminder of the recent Cloud &amp; blockchain hype cycles. It was the first time I had heard that there was a cultural shift in the C-Suite world where many reputable leaders lost their jobs, and seriously damaged a lot of companies, and thereby people’s lives, by migrating to the cloud before running the numbers. Many of the leaders are finding it very difficult to see the benefit of creating AI data &amp; developer teams to save possibly shallow amounts of costs after that, especially if these services need maintained. Many of them are becoming far more interested in open source projects like Llama3 and beyond. There was a lot of praise for RAG (retreival augmented Generation) AI services. Where this pattern has been serving companies, and clients best, by being the most minimal approach, with the least overhead on development time to build.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
-  <meta property="article:section" content="posts">
-  <meta property="article:published_time" content="2024-06-07T00:00:00+00:00">
-  <meta property="article:modified_time" content="2024-06-07T00:00:00+00:00">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-06-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-06-07T00:00:00+00:00">
 
   <meta itemprop="name" content="Weekly Dev Update 3">
-  <meta itemprop="description"
-    content="Weekly Dev Update 3 Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts Conference This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI.">
+  <meta itemprop="description" content="Weekly Dev Update 3 Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts Conference This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI. I thought it was interesting to see the interests, and focuses of C-Suite level individuals. What AI services companies are building, what apps crashed, what apps lost money, what apps are succeeding, and what differenciates them. There was a lot of level-headedness. Almost all of the presenters warned people about the AI-Hype cycle, as a reminder of the recent Cloud &amp; blockchain hype cycles. It was the first time I had heard that there was a cultural shift in the C-Suite world where many reputable leaders lost their jobs, and seriously damaged a lot of companies, and thereby people’s lives, by migrating to the cloud before running the numbers. Many of the leaders are finding it very difficult to see the benefit of creating AI data &amp; developer teams to save possibly shallow amounts of costs after that, especially if these services need maintained. Many of them are becoming far more interested in open source projects like Llama3 and beyond. There was a lot of praise for RAG (retreival augmented Generation) AI services. Where this pattern has been serving companies, and clients best, by being the most minimal approach, with the least overhead on development time to build.">
   <meta itemprop="datePublished" content="2024-06-07T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-06-07T00:00:00+00:00">
   <meta itemprop="wordCount" content="1307">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Weekly Dev Update 3">
-  <meta name="twitter:description"
-    content="Weekly Dev Update 3 Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts Conference This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI.">
+  <meta name="twitter:description" content="Weekly Dev Update 3 Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts Conference This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI. I thought it was interesting to see the interests, and focuses of C-Suite level individuals. What AI services companies are building, what apps crashed, what apps lost money, what apps are succeeding, and what differenciates them. There was a lot of level-headedness. Almost all of the presenters warned people about the AI-Hype cycle, as a reminder of the recent Cloud &amp; blockchain hype cycles. It was the first time I had heard that there was a cultural shift in the C-Suite world where many reputable leaders lost their jobs, and seriously damaged a lot of companies, and thereby people’s lives, by migrating to the cloud before running the numbers. Many of the leaders are finding it very difficult to see the benefit of creating AI data &amp; developer teams to save possibly shallow amounts of costs after that, especially if these services need maintained. Many of them are becoming far more interested in open source projects like Llama3 and beyond. There was a lot of praise for RAG (retreival augmented Generation) AI services. Where this pattern has been serving companies, and clients best, by being the most minimal approach, with the least overhead on development time to build.">
 
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
 
-</head>
-
-<body class="ma0 avenir bg-near-white">
-
-
-
-
+    
+   
+  
 
   <header>
     <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
-        <div class="flex-l justify-between items-center center">
-          <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        SaorsaDev
+      
+    </a>
+    <div class="flex-l items-center">
+      
 
-            SaorsaDev
+      
+      <div class="ananke-socials"></div>
 
-          </a>
-          <div class="flex-l items-center">
-
-
-
-
-            <div class="ananke-socials">
-
-            </div>
-
-          </div>
-        </div>
-      </nav>
+    </div>
+  </div>
+</nav>
 
     </div>
   </header>
 
 
 
-  <main class="pb7" role="main">
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Weekly Dev Update 3</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2024-06-07T00:00:00Z">June 7, 2024</time>
+      
 
-
-    <article class="flex-l flex-wrap justify-between mw8 center ph3">
-      <header class="mt4 w-100">
-        <aside class="instapaper_ignoref b helvetica tracked ttu">
-
-          Posts
-        </aside>
-
-
-
-
-
-
-
-
-
-
-
-        <div id="sharing" class="mt3 ananke-socials">
-
-        </div>
-
-
-        <h1 class="f1 athelas mt3 mb1">Weekly Dev Update 3</h1>
-
-
-
-        <time class="f6 mv4 dib tracked" datetime="2024-06-07T00:00:00Z">June 7, 2024</time>
-
-
-
-
-      </header>
-      <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l">
-        <h1 id="weekly-dev-update-3">Weekly Dev Update 3</h1>
-        <h3 id="conference--rag-ai-presentation--developing-new-web-server-at-work--closing-thoughts">Conference / RAG
-          AI Presentation / Developing New Web Server at Work / Closing thoughts</h3>
-        <h2 id="conference">Conference</h2>
-        <p>This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite
-          positions. Most of the presentations were done by people with decades of experience in IT, and the main focus
-          was, as almost all tech events have been somewhere hovering around, AI. I thought it was interesting to see
-          the interests, and focuses of C-Suite level individuals. What AI services companies are building, what apps
-          crashed, what apps lost money, what apps are succeeding, and what differenciates them. There was a lot of
-          level-headedness. Almost all of the presenters warned people about the AI-Hype cycle, as a reminder of the
-          recent Cloud &amp; blockchain hype cycles. It was the first time I had heard that there was a cultural shift
-          in the C-Suite world where many reputable leaders lost their jobs, and seriously damaged a lot of companies,
-          and thereby people&rsquo;s lives, by migrating to the cloud before running the numbers. Many of the leaders
-          are finding it very difficult to see the benefit of creating AI data &amp; developer teams to save possibly
-          shallow amounts of costs after that, especially if these services need maintained. Many of them are becoming
-          far more interested in open source projects like Llama3 and beyond. There was a lot of praise for RAG
-          (retreival augmented Generation) AI services. Where this pattern has been serving companies, and clients best,
-          by being the most minimal approach, with the least overhead on development time to build.</p>
-        <p>Personally, this is the first C-Suite level event or conference where I walked away feeling like I understood
-          everything that was said. I never heard terms that confused me. It&rsquo;s a testament to my own growth, and
-          that is truly fantastic to acknowledge, after all, my first meetup was about a year ago, and I can confirm
-          that I could only follow about 10% of anything said at that time.</p>
-        <p>I actually enjoyed the event however. Although my current goal is to be the absolute best Senior Software
-          engineer that I can possibly be. Maybe when I get closer to that goal, I can start thinking about something
-          beyond being a fantastic engineer, and think about the benefit I can bring through leadership.</p>
-        <h2 id="rag-ai-presentation">RAG AI Presentation</h2>
-        <p>On que with my conference, the day after I presented an RAG AI service to the team I work on for the
-          marketing team at my company. It was really fun to put a presentation together. I walked away with the
-          realization that I should put more time into preparing for Q&amp;A, as I didn&rsquo;t leave time for it, and I
-          felt the curiosity of the audience was cut short due to that. I also realized that these demo&rsquo;s take
-          more time than you realize. I had prepared slides after the demo that we never got to due to time constraints
-          and the natural movement of the demo in reaction to questions, and reading the audience, and improvising
-          things, and letting an audience member quiz you, and let them try to break the application. Thankfully, the
-          demo went perfectly. It drew on information I provided it, didn&rsquo;t answer questions that I instructed it
-          not to answer, and spoke in a friendly, LLM-way. I loved that I was able to give a technical demonstration
-          based off of all the learning and programming I have been doing on my own time, and inspire, and collect ideas
-          from the audience. Nothing makes me happier than knowing the presentation went well. Our best case is, I get
-          to show this demo later down the road to a larger audience at the company. At worst, I learned a lot by
-          preparing to teach on the topic, I learned how simple it is to build an RAG AI service, and I improved my
-          public speaking skills all at the same time. It was a no-lose scenario for me, and I was happy for the
-          opportuniy.</p>
-        <h2 id="developing-a-web-server-at-work">Developing a Web Server at Work</h2>
-        <p>This week, I started developing a web server at work. It is full of all kinds of problems, and challenges
-          that I have yet to face. I have hit snags and roadblocks that I have been really excited to dive into and
-          explore. The most challenging thing so far is realizing the gap in my knowledge when it comes to templating in
-          Golang. I am just getting to the phase where I am taking avid notes to turn my learnings into a blog post.
-          Once again, the process of teaching about something is a way to super-charge my own learning. This project has
-          given me a pretty distinct excitement every day to wake up, and get to work on something I am passionate to
-          dig into and learn more about.</p>
-        <h2 id="closing-thoughts">Closing Thoughts</h2>
-        <p>As a consequence to all of these activities and new work project, these have been my sole focuses. I
-          don&rsquo;t feel like I have kept up with my authentication form, or progressed that in any way since last
-          week. I haven&rsquo;t dug more than half a dozen pages deeper into the book I am reading on Go. I spend maybe
-          an extra dozen hours a week doing something productive related to programming outside of work, and that still
-          isn&rsquo;t quite enough to make me feel terribly proud. I know the driving time for my job is a serious draw
-          on my time, but I could simply just work on being more disciplined, and get better at saying no to the things
-          I really don&rsquo;t want to be doing. I don&rsquo;t really want to sit in line at Starbucks, I don&rsquo;t
-          really want to play DeadCells while listening to only god knows what through my headphones. I want to keep
-          learning, programming, thinking about programming. Solving problems. Building up my experience with
-          confronting challenges.</p>
-        <p>In line with all of this, I have been stepping away, more and more, from coding-assistance, in all its forms.
-          I have completely shut off co-pilot, I&rsquo;ve been using a custom GPT that doesn&rsquo;t show code in my
-          conversations with it. Even my autocomplete in my IDE is basically muted down to completing local variable
-          names. I did think for the sole reason that I think these tools don&rsquo;t have nearly the kind of support we
-          feel like they do. I think they help you complete lines of code, but I am far, far off from the point in my
-          career where I am ready to stop thinking while I program. Maybe one day I will be. But I am ever more
-          confident that code-assistants are crippling newer programmers, and if I am determined to be a great
-          programmer, then I cannot be dependent on tools to write the code for me, at least not for a good long time.
-        </p>
-        <p>This is also the fourth post on this blog, and it has been a little over a month since I began! In strange
-          accordance, this blog started almost a year on the dot from the time I joined a programming bootcamp to break
-          into the industry. Somehow, it&rsquo;s also about the two year mark from the time I found out my wife was
-          pregnant, and the person I see as my best friend sternly grabbed me by the shoulder and convinced me that the
-          only way my family was going to achieve our goals was for me to break into tech. Almost from that point, I
-          programmed every waking moment of free time I had. Originally, I did it out of fear, and a need for financial
-          freedom. Now, I do it because I love it, and I want to keep sharing what I love to others. It is a testament
-          to what hard work and passion can do for you.</p>
-        <ul class="pa0">
-
-        </ul>
-        <div class="mt6 instapaper_ignoref">
-
-
-        </div>
-      </div>
-
-      <aside class="w-30-l mt6-l">
-
-
-
-
-      </aside>
-
-    </article>
-
-  </main>
-  <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-    <div class="flex justify-between">
-      <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://saorsadev.com/">
-        &copy; SaorsaDev 2024
-      </a>
-      <div>
-        <div class="ananke-socials">
-
-        </div>
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="weekly-dev-update-3">Weekly Dev Update 3</h1>
+<h3 id="conference--rag-ai-presentation--developing-new-web-server-at-work--closing-thoughts">Conference / RAG AI Presentation / Developing New Web Server at Work / Closing thoughts</h3>
+<h2 id="conference">Conference</h2>
+<p>This week I went to a local conference. It was a conference that I would assertain is best suited for C-Suite positions. Most of the presentations were done by people with decades of experience in IT, and the main focus was, as almost all tech events have been somewhere hovering around, AI. I thought it was interesting to see the interests, and focuses of C-Suite level individuals. What AI services companies are building, what apps crashed, what apps lost money, what apps are succeeding, and what differenciates them. There was a lot of level-headedness. Almost all of the presenters warned people about the AI-Hype cycle, as a reminder of the recent Cloud &amp; blockchain hype cycles. It was the first time I had heard that there was a cultural shift in the C-Suite world where many reputable leaders lost their jobs, and seriously damaged a lot of companies, and thereby people&rsquo;s lives, by migrating to the cloud before running the numbers. Many of the leaders are finding it very difficult to see the benefit of creating AI data &amp; developer teams to save possibly shallow amounts of costs after that, especially if these services need maintained. Many of them are becoming far more interested in open source projects like Llama3 and beyond. There was a lot of praise for RAG (retreival augmented Generation) AI services. Where this pattern has been serving companies, and clients best, by being the most minimal approach, with the least overhead on development time to build.</p>
+<p>Personally, this is the first C-Suite level event or conference where I walked away feeling like I understood everything that was said. I never heard terms that confused me. It&rsquo;s a testament to my own growth, and that is truly fantastic to acknowledge, after all, my first meetup was about a year ago, and I can confirm that I could only follow about 10% of anything said at that time.</p>
+<p>I actually enjoyed the event however. Although my current goal is to be the absolute best Senior Software engineer that I can possibly be. Maybe when I get closer to that goal, I can start thinking about something beyond being a fantastic engineer, and think about the benefit I can bring through leadership.</p>
+<h2 id="rag-ai-presentation">RAG AI Presentation</h2>
+<p>On que with my conference, the day after I presented an RAG AI service to the team I work on for the marketing team at my company. It was really fun to put a presentation together. I walked away with the realization that I should put more time into preparing for Q&amp;A, as I didn&rsquo;t leave time for it, and I felt the curiosity of the audience was cut short due to that. I also realized that these demo&rsquo;s take more time than you realize. I had prepared slides after the demo that we never got to due to time constraints and the natural movement of the demo in reaction to questions, and reading the audience, and improvising things, and letting an audience member quiz you, and let them try to break the application. Thankfully, the demo went perfectly. It drew on information I provided it, didn&rsquo;t answer questions that I instructed it not to answer, and spoke in a friendly, LLM-way. I loved that I was able to give a technical demonstration based off of all the learning and programming I have been doing on my own time, and inspire, and collect ideas from the audience. Nothing makes me happier than knowing the presentation went well. Our best case is, I get to show this demo later down the road to a larger audience at the company. At worst, I learned a lot by preparing to teach on the topic, I learned how simple it is to build an RAG AI service, and I improved my public speaking skills all at the same time. It was a no-lose scenario for me, and I was happy for the opportuniy.</p>
+<h2 id="developing-a-web-server-at-work">Developing a Web Server at Work</h2>
+<p>This week, I started developing a web server at work. It is full of all kinds of problems, and challenges that I have yet to face. I have hit snags and roadblocks that I have been really excited to dive into and explore. The most challenging thing so far is realizing the gap in my knowledge when it comes to templating in Golang. I am just getting to the phase where I am taking avid notes to turn my learnings into a blog post. Once again, the process of teaching about something is a way to super-charge my own learning. This project has given me a pretty distinct excitement every day to wake up, and get to work on something I am passionate to dig into and learn more about.</p>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>As a consequence to all of these activities and new work project, these have been my sole focuses. I don&rsquo;t feel like I have kept up with my authentication form, or progressed that in any way since last week. I haven&rsquo;t dug more than half a dozen pages deeper into the book I am reading on Go. I spend maybe an extra dozen hours a week doing something productive related to programming outside of work, and that still isn&rsquo;t quite enough to make me feel terribly proud. I know the driving time for my job is a serious draw on my time, but I could simply just work on being more disciplined, and get better at saying no to the things I really don&rsquo;t want to be doing. I don&rsquo;t really want to sit in line at Starbucks, I don&rsquo;t really want to play DeadCells while listening to only god knows what through my headphones. I want to keep learning, programming, thinking about programming. Solving problems. Building up my experience with confronting challenges.</p>
+<p>In line with all of this, I have been stepping away, more and more, from coding-assistance, in all its forms. I have completely shut off co-pilot, I&rsquo;ve been using a custom GPT that doesn&rsquo;t show code in my conversations with it. Even my autocomplete in my IDE is basically muted down to completing local variable names. I did think for the sole reason that I think these tools don&rsquo;t have nearly the kind of support we feel like they do. I think they help you complete lines of code, but I am far, far off from the point in my career where I am ready to stop thinking while I program. Maybe one day I will be. But I am ever more confident that code-assistants are crippling newer programmers, and if I am determined to be a great programmer, then I cannot be dependent on tools to write the code for me, at least not for a good long time.</p>
+<p>This is also the fourth post on this blog, and it has been a little over a month since I began! In strange accordance, this blog started almost a year on the dot from the time I joined a programming bootcamp to break into the industry. Somehow, it&rsquo;s also about the two year mark from the time I found out my wife was pregnant, and the person I see as my best friend sternly grabbed me by the shoulder and convinced me that the only way my family was going to achieve our goals was for me to break into tech. Almost from that point, I programmed every waking moment of free time I had. Originally, I did it out of fear, and a need for financial freedom. Now, I do it because I love it, and I want to keep sharing what I love to others. It is a testament to what hard work and passion can do for you.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
       </div>
     </div>
-  </footer>
 
-</body>
+    <aside class="w-30-l mt6-l">
 
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://saorsadev.com/" >
+    &copy;  SaorsaDev 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
 </html>
