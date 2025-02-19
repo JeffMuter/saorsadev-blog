@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -12,12 +12,12 @@ In this article, I want to discuss a flexible approach to templating in Golang. 
     
     
     
-      <meta name="robots" content="index, follow">
+      <meta name="robots" content="noindex, nofollow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
 
 
@@ -32,10 +32,10 @@ In this article, I want to discuss a flexible approach to templating in Golang. 
     
 
     
-      <link rel="canonical" href="https://saorsadev.com/posts/technical_templating/">
+      <link rel="canonical" href="http://localhost:1313/posts/technical_templating/">
     
 
-    <meta property="og:url" content="https://saorsadev.com/posts/technical_templating/">
+    <meta property="og:url" content="http://localhost:1313/posts/technical_templating/">
   <meta property="og:site_name" content="SaorsaDev">
   <meta property="og:title" content="Making Sense of Golangs Templating">
   <meta property="og:description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.">
@@ -54,10 +54,8 @@ In this article, I want to discuss a flexible approach to templating in Golang. 
   <meta name="twitter:title" content="Making Sense of Golangs Templating">
   <meta name="twitter:description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.">
 
-      
-    
 	
-  </head><body class="ma0 avenir bg-near-white production">
+  </head><body class="ma0 avenir bg-near-white development">
 
     
    
@@ -256,7 +254,7 @@ func (t *Template) Parse(text string) (*Template, error)</p>
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://saorsadev.com/" >
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
     &copy;  SaorsaDev 2025 
   </a>
     <div><div class="ananke-socials"></div>
