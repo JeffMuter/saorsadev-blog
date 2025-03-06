@@ -41,8 +41,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Posts">
-  <meta itemprop="datePublished" content="2025-02-27T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-02-27T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2025-03-06T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-06T00:00:00+00:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Posts">
 
@@ -87,6 +87,27 @@
   <article class="pa3 pa4-ns nested-copy-line-height">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/wdu_03_07_25/" class="link black dim">
+        Weekly Dev Update 10
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h3 id="email-service--grpc-round-2--aws-ses">Email Service | gRPC Round 2 | AWS SES</h3>
+<p>TLDR: In project Muse (security-camera project that uses AI to summarize and send alerts from conversations) I created a new service to send me emails based on video details.</p>
+<h4 id="pigeons">Pigeons</h4>
+<p>I said it. Pigeons. Muse has a theme that each service is named after a species of bird. I really don&rsquo;t know why. But here we are months after a snap decision, calling sections of my project pigeon. Parrot is the service that uses AI to summarize large transcripts. When a transcript comes back, we format the response into JSON. We are eventually going to log that JSON into a database. But for now, if the AI detects that a sensitive conversation happened from the list of &lsquo;concerns&rsquo; we have, be they crimes, or kiwis, that&rsquo;s right, the AI is smart enough to detect if people are discussing kiwis! Nevermind that. Now that we&rsquo;ve detected kiwi-discussions, what are we going to do about that? Well, we need to be alerted of course! But how&hellip; I chose email. I&rsquo;d prefer to manually review video || audio in an email format, as I can do that on my phone too. I chose to use aws SES (simple email service) for this. Tried a few alternatives, but chose SES because it&rsquo;s cheap and honestly it was what I was what I had already implemented when I realized gmail has too many authentication bugs when using smtp or ses. Since ses was already configured, and working, and free for my needs, I&rsquo;m going to keep on with it.</p>
+    </div>
+    <a href="/posts/wdu_03_07_25/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
       
         <div class="relative w-100 w-30-l mb4 bg-white">
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
@@ -271,27 +292,6 @@ This blog was made just this year, believe it or not! I made it to try and draw 
 <p>In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.</p>
     </div>
     <a href="/posts/technical_templating/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/wdu_05_31_24/" class="link black dim">
-        Weekly Dev Update 2
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <h1 id="weekly-dev-update">Weekly Dev Update</h1>
-<h2 id="creating-content--developing-user-registration">Creating Content &amp; Developing User Registration</h2>
-<h3 id="registration-form">Registration Form</h3>
-<p>This week, what I spent the most time building was the continued work on my registration form. Returning to a sort of mid-level phase, adding sessions to a database, not stored locally in a map. This is nearly complete, but I hope to get that complete, and begin adding tests. I haven&rsquo;t made database unit testing in Golang, so that&rsquo;s something that really excites me. I am finding that I really enjoy, as a developer, the experience of dealing with, and navigating through the processing, manipulating of data. Working with a database, architecting multi-step solutions, and producing useful data to the user, is something that feels exciting to me right now.</p>
-    </div>
-    <a href="/posts/wdu_05_31_24/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 
