@@ -1,0 +1,99 @@
+/* Amber-on-black overrides for the Digio theme. Loaded after /css/styles.css. */
+:root {
+  --amber: #ffb000;
+  --amber-dim: #b37a00;
+  --amber-hot: #ffd24d;
+  --bg: #0a0600;
+  --alert: #ff4a2e;
+}
+
+html { background-color: var(--bg); }
+
+body {
+  color: var(--amber);
+  background-color: var(--bg);
+  font-family: 'Fira Code', monospace;
+  text-shadow: 0 0 4px rgba(255, 176, 0, 0.35);
+}
+
+/* faint scanlines */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.12) 3px
+  );
+}
+
+/* headings: pixel font */
+h1, h2, h3, h4, h5, h6, .toc-container h4 {
+  font-family: 'VT323', monospace;
+  font-weight: 400;
+  color: var(--amber-hot);
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.55);
+  letter-spacing: 0.02em;
+}
+h1 { font-size: 2.6rem; line-height: 1.1; }
+h2 { font-size: 2rem; line-height: 1.2; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.35rem; }
+h5, h6 { font-size: 1.15rem; }
+
+/* post body: readable serif (page.html wraps content in .flex-1) */
+.flex-1 p, .flex-1 li, .flex-1 blockquote {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  text-shadow: none;
+}
+.flex-1 code, .flex-1 pre, .flex-1 pre * {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-shadow: none;
+}
+.flex-1 pre {
+  border: 1px solid var(--amber-dim);
+  padding: 1rem;
+  overflow-x: auto;
+}
+.flex-1 img { max-width: 100%; height: auto; }
+
+/* links */
+a { color: var(--amber); }
+a:hover:not(.block):not(.not-prose) { color: var(--amber-hot); }
+
+/* theme hard-codes white/pink/gray utilities */
+.border-white { border-color: var(--amber) !important; }
+.hover\:border-pink-300:hover,
+.focus\:ring-pink-300:focus { border-color: var(--amber-hot) !important; --tw-ring-color: var(--amber-hot) !important; }
+.text-white { color: var(--amber-hot) !important; }
+.text-gray-300, .text-gray-400 { color: var(--amber-dim) !important; }
+blockquote { border-left-color: var(--amber); color: var(--amber); }
+hr { border-top-color: var(--amber-dim); }
+::selection { background: var(--amber); color: var(--bg); }
+
+/* tint the stock black & white pixel art amber */
+header img, .not-prose img, body > div > img, body > div img[src$=".png"]:not(.flex-1 img) {
+  filter: sepia(1) saturate(6) hue-rotate(-12deg) brightness(0.95);
+}
+.flex-1 img { filter: none; }
+
+/* blinking cursor after the main page title */
+main h1::after {
+  content: "_";
+  margin-left: 0.15em;
+  animation: blink 1.1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  main h1::after { animation: none; }
+  * { transition: none !important; }
+}

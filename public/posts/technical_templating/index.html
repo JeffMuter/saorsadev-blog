@@ -1,113 +1,55 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<!doctype html>
+<html
+    lang="en-us"
+    dir=""
+>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1399&amp;path=livereload" data-no-instant defer></script>
+        <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Making Sense of Golangs Templating | SaorsaDev</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="
-In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.">
-    <meta name="generator" content="Hugo 0.136.5">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=VT323&display=swap" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/amber.css" rel="stylesheet">
+</head>
+
+    </head>
+    <body>
+        <header><header class="py-6 px-6">
+    <div class="flex justify-start items-center">
     
-    
-    
-      <meta name="robots" content="index, follow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
-
-
-
-
-    
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://saorsadev.com/posts/technical_templating/">
-    
-
-    <meta property="og:url" content="https://saorsadev.com/posts/technical_templating/">
-  <meta property="og:site_name" content="SaorsaDev">
-  <meta property="og:title" content="Making Sense of Golangs Templating">
-  <meta property="og:description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-06-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-06-01T00:00:00+00:00">
-
-  <meta itemprop="name" content="Making Sense of Golangs Templating">
-  <meta itemprop="description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.">
-  <meta itemprop="datePublished" content="2024-06-01T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-06-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2329">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Making Sense of Golangs Templating">
-  <meta name="twitter:description" content="In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.">
-
-      
-    
-	
-  </head><body class="ma0 avenir bg-near-white production">
-
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        SaorsaDev
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      <div class="ananke-socials"></div>
-
-    </div>
-  </div>
-</nav>
-
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">Making Sense of Golangs Templating</h1>
+    <nav>
+      <ul class="flex list-none m-0 p-0 gap-4">
+      <li>
+        <a class="text-sm" href="/">
+            home
+        </a>
+      </li>
+      <li>
+        <a class="text-sm" href="/posts/">
+            posts
+        </a>
+      </li>
+      </ul>
+    </nav>
+</div>
+</header></header>
+        <div class="flex justify-center">
+            <img src="/border-home1.png" alt="border-home1" />
+        </div>
+        <main>
+            <div class="mx-auto w-full max-w-4xl px-4 py-6">
+                
+  <div class="flex">
+    <div class="flex-1">
+      <h1 class=" py-2">Making Sense of Golangs Templating</h1>
       
       
-      
-      <time class="f6 mv4 dib tracked" datetime="2024-06-01T00:00:00Z">June 1, 2024</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><img src="/templating_technical.webp" alt="gopher constructs a ball of light in pixel art style"></p>
+      <time datetime="2024-06-01T00:00:00&#43;00:00" class="block mb-4">June 1, 2024</time>
+      <p><img src="/templating_technical.webp" alt="gopher constructs a ball of light in pixel art style"></p>
 <p>In this article, I want to discuss a flexible approach to templating in Golang. By keeping a flexible approach, I mean my aim is to avoid complicated explanations, in favor of explaining the surface level of the main approaches I see myself, and others take when templating. One of the great parts of Golang is that it strives towards simplicity, and in that pursuit, there should generally be one straightforward way of doing things. When reading many articles, and skimming through other Golang tutorials, I found many ways to approach the same problem of templating correctly in a way I could understand. Thus, this is aimed to take someone who has no experience messing with templating, to a point where they feel confident building any templating with any approach they think is best.</p>
 <p>Before diving in, I think the baseline for being able to comprehend what we are doing is: Basic understanding of Golang syntax, as well as some understanding of how an http server works. As well as understanding the structure of HTML syntax.</p>
 <h2 id="templating-syntax">Templating Syntax:</h2>
@@ -235,34 +177,113 @@ func (t *Template) Parse(text string) (*Template, error)</p>
 <pre tabindex="0"><code>func (t *Template) ExecuteTemplate(wr io.Writer, name string, data any) error
 </code></pre><p>Our method is performed on a template. Returns an error for us to check if/when things behave unexpectedly. Taking in an io.Writer, which I have never strayed from the http.ResponseWriter, which matches the io.Writer interface, this way we map the template to our response to the user. We give the name of our base template, because as of now, the template we are calling template.ExecuteTemplate on, does not distinguish, or understand which of the templates in the parse.Tree is the base template, it simply grabbed them all. Once it knows the base template, it begins filling the response with the contents of the base template, when that template requests more information, such as .Email, it will look in the data for that field. When it sees: {{ temaplate &ldquo;footer&rdquo; }}, it will search through the tree for a template with the name &ldquo;footer&rdquo;, and attempt to slot that in.</p>
 <p>While ExecuteTemplate does a lot of heavy lifting, this is the basic high abstraction layer of what&rsquo;s happening. It&rsquo;s ingenious and beautiful how simple it is from that surface layer. I hope this has given you some deeper insights to the methods and types used the the text/template &amp; html/template packages. I have always found a thorough dive into the documentation of a package, and understanding the methods, functions, and types, to be the pinacle of turning a tutorial into something useful. A tutorial is only as helpful as it is specifically tuned to showing the results you are trying to create. If the tutorial shows you how to make a Netflix Clone, and your goal is to make a Netflix Clone, it&rsquo;s probably a great tutorial. However, if you&rsquo;re following a Netflix Clone, and your goal is to make a video streaming platform, it will fall miles short of your expectations, because I very rarely find even the simplest of tutorials, to be good for much more than seeing code examples. Code examples without understanding, and options, is a recipe for becoming stuck debugging code you don&rsquo;t understand. The only way you can debug code is by understanding it, which is why the entire developer community fights against &rsquo;tutorial hell&rsquo;, and more and more, I think we&rsquo;ll see a new war again &lsquo;debugging code in AI hell&rsquo;, which is where you introduce complex bugs in code that not even ChatGPT understands anymore. I think this is a significant danger, and it&rsquo;s part of what I am hoping I can use this blog to confront. A persistent push to help people find documentation more approachable.</p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
+
+      <div class="mt-6">
+        
+
       </div>
     </div>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://saorsadev.com/" >
-    &copy;  SaorsaDev 2025 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
+    
+    
+    <div class="w-64 ml-10 toc-container">
+      <h4 class="mb-4">⋅˚₊‧ ୨ on this page ୧ ‧₊˚ ⋅</h4>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#templating-syntax">Templating Syntax:</a>
+      <ul>
+        <li><a href="#define">Define:</a></li>
+        <li><a href="#template">Template:</a></li>
+        <li><a href="#simple-folder-structure">Simple Folder Structure:</a></li>
+        <li><a href="#handlersgo">handlers.go:</a></li>
+        <li><a href="#templateparseglob">template.ParseGLob:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
   </div>
-</footer>
 
-  </body>
+            </div>
+        </main>
+        
+        <div class="mx-auto w-full max-w-4xl px-4 py-2 mt-8">
+            <img src="/recent-work.png" alt="recent-work" />
+        </div>
+        <div class="mx-auto w-full max-w-4xl px-4 py-4">
+                  
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+               
+             
+              
+
+            <div class="grid lg:grid-cols-2 gap-4">
+                  
+                <a
+                    href="/posts/wdu_07_13_2025/"
+                    class="not-prose block relative cursor-pointer flex flex-col space-y-4 rounded-lg border border-white p-6 transition-all duration-150 hover:border-pink-300 group focus:outline-none focus:ring-2 focus:ring-pink-300"
+                    aria-label="Weekly Dev Update July 14th, 2025"
+                >
+                    <h3 class="font-semibold flex items-center gap-2">
+                         Weekly Dev Update July 14th, 2025
+                    </h3>
+
+                     
+                    <p><em><p>Had a baby, attending conferences &amp; meetups, interviews &amp; C Game-Dev</p>
+<h3 id="hello-world">Hello, World!</h3>
+<p>My wife and I brought our second child into the world, marking a major life event. It&rsquo;s incredibly different having a second in large part, because it&rsquo;s just a lot harder to get a 1 month old, and a toddler, than it ever was one or the other. A crazy amount of coordination is involved, and I&rsquo;m barely holding onto the vain hope that it will get better in short order, else, as is, I&rsquo;m noticing the idea of leaving the house is just too much to handle for me. Or I should say, it&rsquo;s something that requires such a high investment, I don&rsquo;t know if we&rsquo;ll be leaving the house multiple times a day, doing several different chores all together as a family as we have. It simply may be vastly more practical for one parent to take one kid, the other parent to take another.</p></em></p>
+                     
+
+                    <span class="self-start text-sm text-white underline">
+                        Read more →
+                    </span>
+                </a>
+                   
+                <a
+                    href="/posts/wdu-04-18-25/"
+                    class="not-prose block relative cursor-pointer flex flex-col space-y-4 rounded-lg border border-white p-6 transition-all duration-150 hover:border-pink-300 group focus:outline-none focus:ring-2 focus:ring-pink-300"
+                    aria-label="Weekly Dev Update 13"
+                >
+                    <h3 class="font-semibold flex items-center gap-2">
+                         Weekly Dev Update 13
+                    </h3>
+
+                     
+                    <p><em><h2 id="project-muse-finished--oh-javascript-">Project Muse Finished | Oh Javascript&hellip; |</h2>
+<h3 id="project-muse-finished">Project Muse Finished</h3>
+<p>Project Muse started in January, and finally, I have made the final push I plan to make for a while. The project has grown beyond its original MVP, but I wanted to get it to a &lsquo;workable&rsquo; version for my own interests and uses before putting it down entirely. I&rsquo;ve described how Muse works before, but in summary, using a microphone/camera to stream to the RTSP server, it uses FFMPEG to pull out the audio. Using AWS-S3 we upload the mp3s into a bucket. AWS_Lambda on an event trigger for seeing a new mp3 file in the bucket, it uses AWS_Transcribe to get a JSON object, which includes a string of any human speech detected, a transcription. Another S3 bucket for those, and another Lambda watching here, creating AWS_SQS messages. Why? Well querying SQS instead of S3 is 10x cheaper. My original plan was for this app to work properly, and possibly for me to use it. Being a house running on one entry-level web developer&rsquo;s budget, I figured anything would be better than nothing!</p></em></p>
+                     
+
+                    <span class="self-start text-sm text-white underline">
+                        Read more →
+                    </span>
+                </a>
+                 
+            </div>
+        </div>
+        
+        <div class="flex justify-center">
+            <img src="/border-home1.png" alt="border-home1" />
+        </div>
+        <footer><p class="text-xs px-6 py-6">Made with ୨ <a href="https://github.com/danapixels/digio-theme" target="_blank" rel="noopener noreferrer">Digio</a> ୧ .</p>
+</footer>
+    </body>
 </html>

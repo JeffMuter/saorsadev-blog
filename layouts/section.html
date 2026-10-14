@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="mx-auto w-full max-w-4xl px-4 py-6">
+  <h1 class="mb-8">{{ .Title }}</h1>
+  <div class="grid gap-6 mt-8">
+    {{ range .Pages.ByDate.Reverse }}
+    {{ $teaser := or .Params.teaser .Params.description }}
+    <a href="{{ .RelPermalink }}" class="block">
+      <article class="not-prose flex flex-col space-y-4 rounded-lg border border-transparent p-6 transition-all duration-150 hover:border-pink-300">
+        <h2 class="text-xl font-semibold">
+          <span class="text-white flex items-center">
+            {{ with .Params.listIcon }}<img src="{{ . }}" alt="" class="mr-2">{{ end }}
+            {{ .LinkTitle }}
+          </span>
+        </h2>
+        <ul class="pl-5">
+          {{ if not .Date.IsZero }}<li><time class="text-sm text-gray-300">{{ .Date.Format "January 2, 2006" }}</time></li>{{ end }}
+          <li><em>{{ with $teaser }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 140 }}{{ end }}</em></li>
+        </ul>
+      </article>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
