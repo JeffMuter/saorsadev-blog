@@ -1,14 +1,14 @@
 +++
-# PLACEHOLDER copy and images: replace portrait.png/status.png/watching.png in static/
-portraitImage = "/portrait.png"
+portraitImage = "/portrait-hero.gif"
 
-introTitle = "SaorsaDev"
-introBody = "Notes from a Go developer: weekly dev updates, side projects, and technical write-ups. (placeholder intro, edit content/_index.md)"
+introTitle = "Notes from the Saorsa Dev"
+introBody = "Write-ups on Go, Nix and DevOps, plus weekly updates on what I'm building, breaking and learning in the homelab. New here? Start with a recent post below."
 
-statusImage = "/status.png"
-statusText = "Currently building and writing about Go projects."
+statusTitle = "Status"
+statusText = "Updating saorsadev.com...\n\nCI into my Nix environment...\n\nAgentic visualization tools for PRs..."
 
-watchingImage = "/watching.png"
-watchingText = "Latest weekly dev update"
-watchingUrl = "/posts/"
+listeningImage = "/listening-frog.gif"
+listeningTitle = "Listening to..."
+listeningText = "Air Gear opening theme"
+listeningUrl = "https://www.youtube.com/watch?v=4ZYozk9gm0w"
 +++

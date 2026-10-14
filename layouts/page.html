@@ -1,0 +1,37 @@
+{{ define "main" }}
+  <div class="flex">
+    <div class="flex-1">
+      <h1 class=" py-2">{{ .Title }}</h1>
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <time datetime="{{ $dateMachine }}" class="block mb-4">{{ $dateHuman }}</time>
+      {{ .Content }}
+      <div class="mt-6">
+        {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      </div>
+    </div>
+    {{ $toc := .TableOfContents }}
+    {{ if and $toc (ne $toc "<nav id=\"TableOfContents\"></nav>") }}
+    <div class="w-64 ml-10 toc-container">
+      <div class="toc-peek-wrap" aria-hidden="true"><img src="/toc-peek.png" alt="" class="toc-peek"></div>
+      <h4 class="mb-3">On this page</h4>
+      {{ $toc }}
+    </div>
+    <script>
+      // One Oggie at a time: the TOC frog rises only while no banner frog is on screen.
+      document.addEventListener("DOMContentLoaded", function () {
+        var toc = document.querySelector(".toc-container");
+        var banners = document.querySelectorAll('img[src$="border-home1.png"]');
+        if (!toc || !banners.length || !("IntersectionObserver" in window)) return;
+        toc.classList.add("oggie-armed");
+        var seen = new Set();
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
+          toc.classList.toggle("oggie-up", seen.size === 0);
+        });
+        banners.forEach(function (b) { io.observe(b); });
+      });
+    </script>
+    {{ end }}
+  </div>
+{{ end }}

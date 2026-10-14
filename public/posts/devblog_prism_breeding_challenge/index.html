@@ -3,7 +3,7 @@
     lang="en-us"
     dir=""
 >
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1399&amp;path=livereload" data-no-instant defer></script>
+    <head>
         <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +61,8 @@
     
     
     <div class="w-64 ml-10 toc-container">
-      <h4 class="mb-4">⋅˚₊‧ ୨ on this page ୧ ‧₊˚ ⋅</h4>
+      <div class="toc-peek-wrap" aria-hidden="true"><img src="/toc-peek.png" alt="" class="toc-peek"></div>
+      <h4 class="mb-3">On this page</h4>
       <nav id="TableOfContents">
   <ul>
     <li>
@@ -72,6 +73,21 @@
   </ul>
 </nav>
     </div>
+    <script>
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        var toc = document.querySelector(".toc-container");
+        var banners = document.querySelectorAll('img[src$="border-home1.png"]');
+        if (!toc || !banners.length || !("IntersectionObserver" in window)) return;
+        toc.classList.add("oggie-armed");
+        var seen = new Set();
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
+          toc.classList.toggle("oggie-up", seen.size === 0);
+        });
+        banners.forEach(function (b) { io.observe(b); });
+      });
+    </script>
     
   </div>
 
@@ -118,9 +134,9 @@
                     </h3>
 
                      
-                    <p><em><p>Had a baby, attending conferences &amp; meetups, interviews &amp; C Game-Dev</p>
+                    <div class="post-excerpt"><em><p>Had a baby, attending conferences &amp; meetups, interviews &amp; C Game-Dev</p>
 <h3 id="hello-world">Hello, World!</h3>
-<p>My wife and I brought our second child into the world, marking a major life event. It&rsquo;s incredibly different having a second in large part, because it&rsquo;s just a lot harder to get a 1 month old, and a toddler, than it ever was one or the other. A crazy amount of coordination is involved, and I&rsquo;m barely holding onto the vain hope that it will get better in short order, else, as is, I&rsquo;m noticing the idea of leaving the house is just too much to handle for me. Or I should say, it&rsquo;s something that requires such a high investment, I don&rsquo;t know if we&rsquo;ll be leaving the house multiple times a day, doing several different chores all together as a family as we have. It simply may be vastly more practical for one parent to take one kid, the other parent to take another.</p></em></p>
+<p>My wife and I brought our second child into the world, marking a major life event. It&rsquo;s incredibly different having a second in large part, because it&rsquo;s just a lot harder to get a 1 month old, and a toddler, than it ever was one or the other. A crazy amount of coordination is involved, and I&rsquo;m barely holding onto the vain hope that it will get better in short order, else, as is, I&rsquo;m noticing the idea of leaving the house is just too much to handle for me. Or I should say, it&rsquo;s something that requires such a high investment, I don&rsquo;t know if we&rsquo;ll be leaving the house multiple times a day, doing several different chores all together as a family as we have. It simply may be vastly more practical for one parent to take one kid, the other parent to take another.</p></em></div>
                      
 
                     <span class="self-start text-sm text-white underline">
@@ -138,9 +154,9 @@
                     </h3>
 
                      
-                    <p><em><h2 id="project-muse-finished--oh-javascript-">Project Muse Finished | Oh Javascript&hellip; |</h2>
+                    <div class="post-excerpt"><em><h2 id="project-muse-finished--oh-javascript-">Project Muse Finished | Oh Javascript&hellip; |</h2>
 <h3 id="project-muse-finished">Project Muse Finished</h3>
-<p>Project Muse started in January, and finally, I have made the final push I plan to make for a while. The project has grown beyond its original MVP, but I wanted to get it to a &lsquo;workable&rsquo; version for my own interests and uses before putting it down entirely. I&rsquo;ve described how Muse works before, but in summary, using a microphone/camera to stream to the RTSP server, it uses FFMPEG to pull out the audio. Using AWS-S3 we upload the mp3s into a bucket. AWS_Lambda on an event trigger for seeing a new mp3 file in the bucket, it uses AWS_Transcribe to get a JSON object, which includes a string of any human speech detected, a transcription. Another S3 bucket for those, and another Lambda watching here, creating AWS_SQS messages. Why? Well querying SQS instead of S3 is 10x cheaper. My original plan was for this app to work properly, and possibly for me to use it. Being a house running on one entry-level web developer&rsquo;s budget, I figured anything would be better than nothing!</p></em></p>
+<p>Project Muse started in January, and finally, I have made the final push I plan to make for a while. The project has grown beyond its original MVP, but I wanted to get it to a &lsquo;workable&rsquo; version for my own interests and uses before putting it down entirely. I&rsquo;ve described how Muse works before, but in summary, using a microphone/camera to stream to the RTSP server, it uses FFMPEG to pull out the audio. Using AWS-S3 we upload the mp3s into a bucket. AWS_Lambda on an event trigger for seeing a new mp3 file in the bucket, it uses AWS_Transcribe to get a JSON object, which includes a string of any human speech detected, a transcription. Another S3 bucket for those, and another Lambda watching here, creating AWS_SQS messages. Why? Well querying SQS instead of S3 is 10x cheaper. My original plan was for this app to work properly, and possibly for me to use it. Being a house running on one entry-level web developer&rsquo;s budget, I figured anything would be better than nothing!</p></em></div>
                      
 
                     <span class="self-start text-sm text-white underline">
@@ -154,7 +170,7 @@
         <div class="flex justify-center">
             <img src="/border-home1.png" alt="border-home1" />
         </div>
-        <footer><p class="text-xs px-6 py-6">Made with ୨ <a href="https://github.com/danapixels/digio-theme" target="_blank" rel="noopener noreferrer">Digio</a> ୧ .</p>
+        <footer><p class="text-xs px-6 py-6">The Saorsa Dev · theme: <a href="https://github.com/danapixels/digio-theme" target="_blank" rel="noopener noreferrer">Digio</a></p>
 </footer>
     </body>
 </html>

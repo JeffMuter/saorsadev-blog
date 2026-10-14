@@ -1,0 +1,100 @@
+{{ define "main" }}
+{{ $p := .Params }}
+<div class="grid lg:grid-cols-2 gap-4">
+	<div class="not-prose flex cursor-default flex-col space-y-4 rounded-lg border border-white p-4">
+		<div class="hero">
+			<picture>
+				<source srcset="/portrait-hero.png" media="(prefers-reduced-motion: reduce)">
+				<img src="{{ or $p.portraitImage "/portrait-hero.gif" }}" alt="Portrait" class="w-full h-auto">
+			</picture>
+			<div class="hud-col">
+				{{ with index (where site.RegularPages "Section" "posts").ByDate.Reverse 0 }}
+				<div class="hud-box hud-recent">
+					<span class="hud-label">Recent</span>
+					<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+				</div>
+				{{ end }}
+				<div class="hud-box hud-topics" role="group" aria-label="Filter posts by topic">
+					<span class="hud-label">Topics</span>
+					<div class="topic-list">
+						{{ range first 4 site.Taxonomies.tags.ByCount }}
+						<a class="topic" href="{{ .Page.RelPermalink }}" data-topic="{{ .Page.Title | lower }}" aria-pressed="false">{{ .Page.Title | lower }}</a>
+						{{ end }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			{{ with $p.introTitle }}<strong>{{ . }}</strong>{{ end }}
+			{{ with $p.introBody }}{{ . | markdownify }}{{ end }}
+		</div>
+	</div>
+	<div class="grid lg:grid-rows-2 gap-4">
+		<div class="not-prose flex cursor-default flex-col space-y-2 rounded-lg border border-white p-6">
+			<h2 class="text-2xl">{{ or $p.statusTitle "Status" }}<span class="status-dots" aria-hidden="true">...</span></h2>
+			{{ with $p.statusText }}<div>{{ . | markdownify }}</div>{{ end }}
+		</div>
+		<div class="not-prose flex cursor-default flex-col space-y-2 rounded-lg border border-white p-6">
+			<div class="flex items-center gap-4">
+				<picture class="self-start">
+					<source srcset="/listening-frog.png" media="(prefers-reduced-motion: reduce)">
+					<img src="{{ or $p.listeningImage "/listening-frog.gif" }}" alt="Oggie, the winged frog, wearing headphones" class="self-start">
+				</picture>
+				<h2 class="text-2xl">{{ or $p.listeningTitle "Listening to..." }}</h2>
+			</div>
+			{{ if or $p.listeningUrl $p.listeningText }}
+				<p class="underline">
+					{{ if $p.listeningUrl }}<a href="{{ $p.listeningUrl }}">{{ end }}
+					{{ or $p.listeningText "" }}
+					{{ if $p.listeningUrl }}</a>{{ end }}
+				</p>
+			{{ end }}
+		</div>
+	</div>
+</div>
+{{ .Content }}
+<div class="post-heading"><img src="/recent-work.png" alt="New posts"></div>
+<p class="topic-status" aria-live="polite" hidden></p>
+<div class="grid lg:grid-cols-2 gap-4 post-grid">
+	{{ range site.RegularPages.ByDate.Reverse }}
+	{{ if eq .Section "posts" }}
+	<a href="{{ .RelPermalink }}" data-tags="{{ delimit (apply .Params.tags "lower" ".") " " }}"
+		class="post-card not-prose relative flex flex-col space-y-3 rounded-lg border border-white p-6 transition-all duration-150 hover:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-300">
+		<h3 class="font-semibold">{{ .LinkTitle }}</h3>
+		{{ if not .Date.IsZero }}<time class="text-sm" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+		{{ with or .Params.teaser .Params.description }}<div class="post-excerpt"><em>{{ . }}</em></div>{{ else }}<div class="post-excerpt"><em>{{ .Summary | plainify | truncate 260 }}</em></div>{{ end }}
+		<span class="self-start text-sm underline">Read more →</span>
+	</a>
+	{{ end }}
+	{{ end }}
+</div>
+<p class="mt-4"><a class="underline" href="/posts/">All posts →</a></p>
+<script>
+(function () {
+	var LIMIT = 4;
+	var cards = Array.prototype.slice.call(document.querySelectorAll('.post-card'));
+	var btns = Array.prototype.slice.call(document.querySelectorAll('.topic'));
+	var status = document.querySelector('.topic-status');
+	function apply(topic) {
+		var n = 0;
+		cards.forEach(function (c) {
+			var match = !topic || c.dataset.tags.split(' ').indexOf(topic) > -1;
+			c.hidden = !(match && (topic || n < LIMIT));
+			if (match) n++;
+		});
+		btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.topic === topic)); });
+		status.hidden = !topic;
+		status.textContent = topic ? n + ' post' + (n === 1 ? '' : 's') + ' tagged "' + topic + '"' : '';
+	}
+	btns.forEach(function (b) {
+		b.addEventListener('click', function (e) {
+			e.preventDefault();
+			var t = b.getAttribute('aria-pressed') === 'true' ? '' : b.dataset.topic;
+			apply(t);
+			try { history.replaceState(null, '', t ? '#' + t : location.pathname); } catch (_) {}
+		});
+	});
+	apply(decodeURIComponent(location.hash.slice(1)));
+})();
+</script>
+{{ end }}

@@ -3,6 +3,7 @@
 title = 'Making Sense of Golangs Templating'
 date = 2024-06-01
 draft = false
+tags = ["golang"]
 +++
 
 ![gopher constructs a ball of light in pixel art style](/templating_technical.webp)

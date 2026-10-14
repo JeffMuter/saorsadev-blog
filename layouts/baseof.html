@@ -16,7 +16,7 @@
                 {{ block "main" . }}{{ end }}
             </div>
         </main>
-        {{ if or .IsHome (or (in (slice "post" "posts" "blog") .Type) (in (slice
+        {{ if and (not .IsHome) (or (in (slice "post" "posts" "blog") .Type) (in (slice
         "posts" "blog") .Section)) }}
         <div class="mx-auto w-full max-w-4xl px-4 py-2 mt-8">
             <img src="/recent-work.png" alt="recent-work" />
@@ -57,7 +57,7 @@
                     {{ else }} {{ with $post.Params.description }}
                     <p><em>{{ . }}</em></p>
                     {{ else }}
-                    <p><em>{{ $post.Summary }}</em></p>
+                    <div class="post-excerpt"><em>{{ $post.Summary }}</em></div>
                     {{ end }} {{ end }}
 
                     <span class="self-start text-sm text-white underline">
