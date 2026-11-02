@@ -1,7 +1,7 @@
 +++
 title = 'The Go-Top Becomes a Homelab'
 date = 2026-10-14T12:30:00Z
-draft = true
+draft = false
 tags = ["homelab", "devops", "nix", "docker", "tailscale"]
 +++
 

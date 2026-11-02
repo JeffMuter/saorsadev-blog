@@ -1,7 +1,7 @@
 +++
 title = 'Rebuilding My NixOS Machine With One Command'
 date = 2026-10-14T12:00:00Z
-draft = true
+draft = false
 tags = ["nix", "nixos", "dotfiles", "devops"]
 +++
 

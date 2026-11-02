@@ -34,3 +34,28 @@ Rules of thumb:
 - Text belongs in HTML, not baked into images (use real headings next to a sprite).
 - `static/border-home1.png` (frog banner) is approved; don't change it without being asked.
 - Use `prefers-reduced-motion` fallbacks for animation (`portrait-hero.png` is the static frame).
+
+## Publishing / deploying (read before pushing)
+
+Verified 2026-11-02.
+
+- **Push over SSH, not HTTPS.** `origin` is `https://github.com/JeffMuter/saorsadev-blog` and agent shells have
+  no git credential helper (and `gh` is not logged in), so plain `git push` fails with
+  `could not read Username`. The user's SSH key works (`ssh -T git@github.com` authenticates), so use:
+  `git push git@github.com:JeffMuter/saorsadev-blog.git master`. Don't change the remote or git config.
+- **Publishing a post** = set `draft = false` in its front matter, remove any `TODO` comments, commit
+  the post source only, push as above. Only push when the user has asked.
+- **`public/` is gitignored** (`/public/`); the files tracked under it are stale leftovers that show up as
+  modified after every build. Never stage them.
+- **CI deploy is currently broken.** A push to `master` runs `.github/workflows/firebase-hosting-merge.yml`
+  (hugo build, then Firebase Hosting, project `saorsadev`, channel `live`). It fails with
+  `Input required and not supplied: firebaseServiceAccount` because the GitHub secret
+  `FIREBASE_SERVICE_ACCOUNT_SAORSADEV` is missing. Fix needs the user (`firebase init hosting:github`,
+  or add the secret by hand in repo Settings); agents can't set it.
+- **Until CI is fixed, deploy by hand** after pushing: build into a temp dir and deploy that, never the repo's `public/`: it holds stale output from old `hugo -D`
+  runs, and `firebase deploy` uploads every file in it (this leaked unpublished drafts once). Write a temp
+  `firebase.json` whose `hosting.public` points at the temp build dir and pass `--config`, e.g.
+  `hugo --destination $TMP/site && firebase deploy --only hosting --project saorsadev --config $TMP/firebase.json`
+  The Firebase CLI is already logged in on this machine. Live site: https://saorsadev.web.app. Verify with
+  `curl -s -o /dev/null -w "%{http_code}" https://saorsadev.web.app/posts/<slug>/`.
+  Once the secret is restored, drop the manual step and update this section.
