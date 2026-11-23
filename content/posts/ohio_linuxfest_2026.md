@@ -7,36 +7,27 @@ tags = ["talks", "nix", "homelab", "radio", "ai"]
 
 I spoke at Ohio LinuxFest on Saturday, and I expected 5 to 10 people. About 55 showed up. The talk was "One Config, Any Machine," about managing your dotfiles and your whole machine from git, with Stow and NixOS. It's the story from [my flake post](/posts/nixos_flakes_dotfiles_one_command/), and I think it's the best presentation I've put together.
 
+If you want the slides, you can [download the deck as a PDF](/talks/one-config-any-machine.pdf) (31 slides, about 550 KB).
+
 ### The room
 
-My room was a lot smaller than the main conference space. You took an elevator up, walked down a couple of halls, and hoped you'd read the signs right. It was not a place you'd stumble into.
+The room I would be speaking in was a lot smaller than the main conference space. You took an elevator up, walked down a couple of halls, and hoped you'd read the signs right. It was not a place you'd stumble into. Which is fine, especially if you're somewhat introverted like me, and expecting 5-10 people to show up because the 'good' talks are normally reserved for the large presentation space.
 
-The talk right before mine was on hardening agentic processes with AI, and a lot of people wanted to see it. It was in my room. When it ended there wasn't a better place for them to go, so they stayed. Every seat was taken, people stood along the back, and some stood in the hall. That's several times my usual audience.
-
-I'd love to say they came for the NixOS, but it was the schedule.
+The talk right before mine was on hardening agentic processes with AI, and a lot of people wanted to see it, even thought it was in the smaller space. When it ended the audience could stay for my presentation, float around the halls, or enter the main presentation space where that presentation was already half-done, so people stayed for my talk. Naturally, this horrified my inner introvert, but I saw the writing on the wall when the AI talk was packed. So I took the 30 minutes I had and mentally reviewed, did some breathing techniques, and said a few prayers. When it was time to present, every seat was taken, people stood along the back, and some stood in the hall. The 5-10 people I expected was closer to 50-60.
 
 ### The talk
 
-It starts with a laptop at 15.6 of 16 GB of RAM, because at my new job I was running Teams, Outlook, Chrome and VS Code on Windows. That's how I ended up in Neovim, and from there to a dotfiles setup I never pushed anywhere. Then comes the day I deleted it. I thought `rm -r` on a symlink only removed the link, and the trailing slash made it follow the link and delete my real files. I stopped on that slide and let the room read it. Plenty of people in there had typed the same command.
+I learned some lessons from previous talks I've given with a longer format. In a room where people don't know you, it's important to give them an anchor for you, and your tone, and why you're presenting this. So I presented on me. The story of why I picked more stripped down tooling for my developer workflow, why I was customizing. And by the end, I thought the audience was responding well, laughing at my old mistakes with me. They seemed to understand how I ended up so depressed. The slides people engaged with the most were simple, not some visual guide, but the "5 stages of grief after losing my config", and the slide that just showed the command which ruined my machine. I got feedback on that slide asking "what does this do? Anyone know?", and I encouraged people to guess. It went well, and one person knew that it also destroyed the original files because of the trailing slash. It was perfect. And several slides got a lot of laughs. That was very good before the more technical second 2/3 of the presentation where I went over options, why else people might want to do this.
 
-From there I went through why you'd want a declarative setup, where you describe the end state and the tool works out the steps, and then six ways people handle it today. The last one is mine: git for history, Stow to link the dotfiles into place, NixOS for the whole machine. The point I cared about most is that you don't need all three. Git alone takes about 15 minutes and pays for itself.
-
-I got a lot of laughs and had a lot of fun. The biggest thing I'd change is the deck, which was words and diagrams with no real photos or screenshots. The other is rehearsal, because I didn't do enough of it. It's a big confidence boost for the next one.
+I think the one main thing I'd like to do different is hammer in better, "I want to enable you to feel more happiness, and excitement at work. Yes, being productive is important, but you aren't as productive when you aren't enjoying your work. You'll enjoy your work more, and be more productive, if your machine feels more personalized."
 
 ### After the talk
 
-I'd known someone in my area loosely for a while, and I finally had a real conversation with them in a quiet prep room. They're into radio, and we covered radio, how to live more privately online, raising kids, and city versus farm. There's a radio enthusiast meetup near Polaris, and I plan to go to the next one.
+Later I ended up in a relaxing, downtime room for drifters between presentations. I'd known someone in my area loosely for a while, and I finally had a real conversation with them in a quiet prep room. They're into radio, and we covered radio, how to live more privately online, raising kids, and city versus farm. There's a radio enthusiast meetup near Polaris, and I plan to go to the next one.
 
 I also learned about Meshtastic. It's a mesh network built from cheap radios, so people can message each other with no internet and no cell service. I'd only half understood it before. It got me more excited about radio and about my homelab at the same time.
 
 All of it is pushing me to take my own data more seriously than I have so far. In the homelab, that means real backups of the family photos and videos. At home, it means finally getting Windows off my personal machines. On my phone, it's GrapheneOS on my Pixel 9. None of it is done yet.
 
-### Projects since the last post
-
-The [homelab](/posts/homelab_go_top/) hasn't moved. The repo is still a to-do list, plus a half-built Tailscale explainer page I haven't committed. Tailscale is first, now that the talk is behind me.
-
-The [manga machine](/posts/wdu_11_02_2026/) did move in early November. I switched the writing step to Sonnet, tried training a LoRA (a small add-on model) for each character, and made every scene keep one shared record of its lighting, props and wardrobe. A panel that runs too long gets re-asked and then cut instead of killing the whole book. The first full baseline run still failed QA, with 20 of 50 pictures usable, so the pipeline got sturdier and the art didn't get better.
-
 ### Next
 
-I'll put the slides here once I have somewhere to host them.
